@@ -1,0 +1,119 @@
+.login {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.login-form {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-login {
+    width: 50%;
+    height: 100%;
+    background-color: #f9fafb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-login img {
+    position: relative;
+    bottom: 40px;
+    animation-name: examplo;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.banner-login h2 {
+    position: relative;
+    bottom: 40px;
+}
+
+.login-form-wrapper {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.login-form-wrapper button {
+    width: 100%;
+    padding: 5px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    border: none;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.login-form-wrapper button:hover {
+    border: none;
+    color: #fff;
+    transform:scale(1.05);
+    transition: .5s;
+}
+
+.login-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px 0;
+}
+
+.login-title a {
+    color: #6e8efb;
+    text-decoration: none;
+}
+
+.login-title a:hover {
+    color: #a777e3;
+    transform: scale(1.05);
+    transition: .2s;
+}
+
+
+@media screen and (max-width:1200px) {
+    .banner-login {
+        width: 50%;
+        padding: 0 2%;
+    }
+    .banner-login img {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width:999px) {
+    .banner-login {
+        display: none;
+    }
+    .login-form {
+        width: 100%;
+    }
+}
+
+@keyframes coracao{
+    0% {transform: scale(1.00);}
+    25%{transform: scale(1.02);}
+    50%{transform: scale(1.04);}
+    75%{transform: scale(1.06);}
+    100%{transform: scale(1.08);}
+}
+@keyframes cima-baixo{
+    0% {transform: scale(1.02);}
+    25%{transform: scale(1.04);}
+    50%{transform: scale(1.06);}
+    75%{transform: scale(1.08);}
+    100%{transform: scale(1.10);}
+}

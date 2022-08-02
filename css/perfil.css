@@ -1,0 +1,75 @@
+
+div.perfil-parent {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+div.perfil {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    padding: 10px 10px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+div.perfil-form {
+    width: 100%;
+}
+div.sidebar-title-mobile{
+    display: block;
+}
+div.perfil-form label {
+    font-size: 14px;
+    color: #72777a;
+}
+
+div.perfil-form .custom-file {
+    margin-top: 10px;
+}
+
+div.perfil-form input,
+div.perfil-form select {
+    font-size: 14px;
+}
+
+div.perfil-form button {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: #fff;
+}
+
+div.perfil-form button:hover {
+    color: #4d4d4d;
+    transform: scale(1.10);
+    transition: .4s;
+}
+
+@media screen and (max-width:1250px){
+    div.perfil {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        padding: 10px 10px;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    }
+    div.perfil-form {   
+        padding-bottom: 2px;
+        margin-top: 10px;
+        width: 100%;
+    }
+    div.perfil-form button {
+
+        width: 100% ;
+    }
+}
