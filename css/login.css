@@ -26,7 +26,7 @@
 .banner-login img {
     position: relative;
     bottom: 40px;
-    animation-name: examplo;
+    animation-name: coracao;
     animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-delay: 1s;
@@ -52,6 +52,8 @@
     padding: 5px;
     background: linear-gradient(135deg, #6e8efb, #a777e3);
     border: none;
+    font-size: 20px;
+    border-radius: 7px;
     color: #fff;
     margin-top: 20px;
 }
@@ -82,7 +84,9 @@
     transform: scale(1.05);
     transition: .2s;
 }
-
+label{
+    padding: 5px;
+}
 
 @media screen and (max-width:1200px) {
     .banner-login {
@@ -95,7 +99,7 @@
 }
 
 @media screen and (max-width:999px) {
-    .banner-login {
+    .banner-login{
         display: none;
     }
     .login-form {

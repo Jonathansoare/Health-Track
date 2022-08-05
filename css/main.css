@@ -364,7 +364,7 @@ div.type {
         padding: 10px;
     }
     div.main-content-title h2 {
-        padding: 0;
+        padding: 1px 0;
         text-align: center;
     }
     .panel-row {
