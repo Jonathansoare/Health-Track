@@ -62,38 +62,36 @@
                 <i id="iconMenu" onclick="responsiveSiderbar()" class="fas fa-bars "></i>
                 <a href="../index.html"> <i class="fa-solid fa-arrow-right-from-bracket"></i> logout</a>
             </header>
-            <div class="main-content-title">
-                <h2>Perfil</h2>
-            </div>
+            <div class="main-content">
+                <div class="main-content-title">
+                    <h2>Perfil</h2>
+                </div>
             <div class="perfil-parent">
                 <div class="perfil">
                     <div class="perfil-form">
                         <form id="form-perfil">
-                            <div class="mb-3 ">
-                                <input type="text" class="form-control" name="nome" id="name" placeholder="Nome Completo">
+                            <div class="mb-3">
+                                <label for="name">Nome</label>
+                                <input type="text" class="form-control" id="name" placeholder="Nome Completo" value="" required/>
                             </div>
-                            <div class="mb-3 ">
-                                <input  type="text " class="form-control " name="idade" id="age " 
-                                placeholder="Idade">
+                            <div class="mb-3">
+                                <label for="age">Idade</label>
+                                <input type="text" class="form-control" id="age" placeholder="Idade" value="" required/>
                             </div>
-                            <div class=" mb-3 ">
-                                <input type="text " class="form-control " name="cpf" id="cpf " placeholder="Digite seu CPF">
-                            </div>
-                            <div class="mb-3 ">
-                                <label for="genre ">Genero</label>
-                                <select  class="form-select " name="genero" id="genre ">
-                                <option value="1 ">Masculino</option>
-                                <option value="2 ">Feminino</option>
+                            <div class="mb-3">
+                                <label for="genre">Gênero</label>
+                                <select class="form-select" id="genre">
+                                <option value="1">Masculino</option>
+                                <option value="2">Feminino</option>
                                 </select>
                             </div>
-                            <div class="mb-3 ">
-                                <input  type="email " name="email" class="form-control " id="email " placeholder="Digite seu Email ">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp" required/>
                             </div>
-                            <div class="mb-3 ">
-                                <input type="password" name="password" class="form-control " placeholder="Digite sua Senha " id="password ">
-                            </div>
-                            <div class="mb-3 ">
-                                <input type="password" name="password_again" class="form-control " placeholder="Confimar sua Senha " id="password_again">
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Senha</label>
+                                <input type="password" class="form-control" placeholder="Senha" id="exampleInputPassword1" required/>
                             </div>
                             <button type="submit " class="btn ">Salvar</button>
                         </form>
