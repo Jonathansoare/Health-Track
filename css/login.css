@@ -11,12 +11,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background-color: #121212;
 }
 
 .banner-login {
     width: 50%;
     height: 100%;
-    background-color: #f9fafb;
+    background-color: #151515;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,6 +38,12 @@
 .banner-login h2 {
     position: relative;
     bottom: 40px;
+    color: #6e8efb;
+}
+.banner-login h2:hover{
+    position: relative;
+    bottom: 40px;
+    color:#a777e3;
 }
 
 .login-form-wrapper {
@@ -72,6 +79,7 @@
     justify-content: space-between;
     margin-bottom: 20px;
     padding: 10px 0;
+    color: #fff;
 }
 
 .login-title a {
@@ -86,6 +94,7 @@
 }
 label{
     padding: 5px;
+    color: #fff;
 }
 
 @media screen and (max-width:1200px) {

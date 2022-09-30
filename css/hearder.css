@@ -4,14 +4,14 @@
     align-items: center;
     justify-content: flex-end;
     height: 90px;
-    background-color: white;
+    background-color: #121212;
     padding: 10px 30px;
     border: 1px solid rgba(0, 0, 0, .0625);
 }
 
 .flex-dashboard header a {
     text-decoration: none;
-    color: #72777a;
+    color: #999999;
 }
 
 .flex-dashboard header svg {

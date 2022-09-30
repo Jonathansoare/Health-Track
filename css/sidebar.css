@@ -9,7 +9,7 @@ sidebar {
     display: block;
     height: 100%;
     width: 300px;
-    background-color: #fff;
+    background-color: #121212;
 }
 
 sidebar .sidebar-title {
@@ -21,6 +21,8 @@ sidebar .sidebar-title {
     height: 90px;
     border: 1px solid rgba(0, 0, 0, .0625);
     border-right: 0px;
+    background-color: #121212;
+    color: #f0f0f0;
 }
 
 sidebar .sidebar-title img {
@@ -62,7 +64,7 @@ div.menu ul li svg {
 }
 
 div.menu ul li a {
-    color: #72777a;
+    color: #f0f0f0;
     margin-left: 20px;
     text-decoration: none;
     text-transform: uppercase;
