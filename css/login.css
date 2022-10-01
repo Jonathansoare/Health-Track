@@ -14,6 +14,13 @@
     background-color: #121212;
 }
 
+.login-form input{
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #303030;
+    color: #f8f8f8;
+}
+
 .banner-login {
     width: 50%;
     height: 100%;
@@ -108,6 +115,15 @@ label{
 }
 
 @media screen and (max-width:999px) {
+    .banner-login{
+        width: 100%;
+    }
+    .login-form {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:700px) {
     .banner-login{
         display: none;
     }

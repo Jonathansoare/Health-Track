@@ -1,23 +1,35 @@
-$(function() {
-    $("#peso-form").submit(function (event) {
-        event.preventDefault()
-    }).validate({
-        rules: {
-            peso: {
-                required: true,
-                number: true
-            },
-            altura: {
-                required: true,
-                number: true
-            },
-        },
-        submitHandler: function (form) {
-            Swal.fire(
-                'Sucesso',
-                'Registro realizado com sucesso ',
-                'success'
-              )
+const btn = document.getElementById('btn_cadastra')
+ Swal.fire({
+        title: 'Do you want to save the changes?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Save',
+        denyButtonText: `Don't save`,
+        }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            Swal.fire('Saved!', '', 'success')
+        } else if (result.isDenied) {
+            Swal.fire('Changes are not saved', '', 'info')
         }
-    });
-})
+    })
+
+function alert(){
+    btn.addEventListener("click", () => {
+        Swal.fire({
+            title: 'Do you want to save the changes?',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Save',
+            denyButtonText: `Don't save`,
+            }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                Swal.fire('Saved!', '', 'success')
+            } else if (result.isDenied) {
+                Swal.fire('Changes are not saved', '', 'info')
+            }
+        })
+    })
+}
+
