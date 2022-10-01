@@ -36,7 +36,11 @@ div.perfil-form select {
     font-size: 14px;
     background-color: transparent;
     border: 1px solid #303030;
+<<<<<<< HEAD
     color: #f8f8f8;
+=======
+    color: #999999;
+>>>>>>> 451847d812c7134f07f5f1c47a4bafeefa5a80c5
 }
 
 div.perfil-form button {
