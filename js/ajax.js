@@ -5,7 +5,7 @@ function fetchContent(el) {
     const folder = el.getAttribute('a-folder')
     const scriptSRC = el.getAttribute('a-script')
 
-    fetch(`./ajax/${folder}/${view}.html`)
+    fetch(`../ajax/${folder}/${view}.html`)
         .then(response => {
             let html = response.text()
             return html
@@ -17,7 +17,7 @@ function fetchContent(el) {
         .then(() => {
             const script = document.createElement("script")
             script.async = true
-            script.src = `./js/${scriptSRC}.js`
+            script.src = `/js/${scriptSRC}.js`
             document.body.appendChild(script); 
         })
 }
