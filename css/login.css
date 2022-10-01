@@ -19,6 +19,7 @@
     background-color: transparent;
     border: 1px solid #303030;
     color: #f8f8f8;
+    border-radius: 10px;
 }
 
 .banner-login {
