@@ -102,6 +102,9 @@ div#ajax-content label {
 
 div#ajax-content input {
     font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #303030;
+    color: #999999;
     padding-left: 5px;
 }
 
@@ -120,6 +123,18 @@ div#ajax-content table svg:hover {
     width: 100%;
     position: relative;
     padding: 20px;
+    background-color: #121212;
+    color: #f8f8f8;
+}
+
+.dynamic-content tbody {
+    color: #f8f8f8;
+}
+.dynamic-content tr {
+    color: #f8f8f8;
+}
+.dynamic-content td {
+    color: #f8f8f8;
 }
 
 div.main-content-title {
