@@ -42,20 +42,14 @@ box-shadow: 0px 0px 5px 0px rgba(30,30,30,1);
     font-size: 20px;
 }
 
-.register .form-group label {
+.label_register {
     font-size: 14px;
-}
-
-.register input,.register select {
-    font-size: 14px;
-    background-color: transparent;
-    border: 1px solid #303030;
     color: #f8f8f8;
-    
+    padding: 5px;
 }
 
 .register button {
-    margin-top: 40px;
+    margin-top: 15px;
     background: linear-gradient(135deg, #6e8efb, #a777e3);
     color: #fff;
     width: 100%;
@@ -69,4 +63,25 @@ box-shadow: 0px 0px 5px 0px rgba(30,30,30,1);
     transform: scale(1.05);
     transition: .2s;
     font-size: 16px;
+}
+
+.register-input{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-register{
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #303030;
+    color: #f8f8f8;
+    border-radius: 10px;
+    height: 35px;
+    width: 100%;
+    padding-left: 3px;
+    outline: none;
+}
+.alert-msg{
+    margin-top: 5px;
+    margin-bottom: 0px;
 }
