@@ -122,6 +122,22 @@ div#ajax-content table svg:hover {
     transition: .2s;
 }
 
+.dynamic-content-cadastro {
+    width: 100%;
+    position: relative;
+    padding: 20px;
+    background-color: #121212;
+    color: #f8f8f8;
+    display: none;
+}
+.dynamic-content-vizul {
+    width: 100%;
+    position: relative;
+    padding: 20px;
+    background-color: #121212;
+    color: #f8f8f8;
+    display: none;
+}
 .dynamic-content {
     width: 100%;
     position: relative;

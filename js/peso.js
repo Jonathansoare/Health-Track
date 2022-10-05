@@ -1,7 +1,8 @@
 const pesoInput = document.getElementById('peso')
 const alturaInput = document.getElementById('altura')
 const btn = document.getElementById('btn_cadastra-peso')
-const formInput = document.getElementById('dynamic-content').innerHTML
+const formcadastro = document.getElementById('dynamic-content-cadastro').innerHTML
+const formVizul = document.getElementById('dynamic-content-vizu')
 const btn_abri_tela = document.getElementById('button-abrir-cadastro')
 
 btn.addEventListener("click", (el) => {
@@ -32,14 +33,32 @@ btn.addEventListener("click", (el) => {
     
 })
 
-function amostraform(){
-    if(document.getElementById('dynamic-content').style.display == "block"){
-        document.getElementById('dynamic-content').style.display = "none"
+function AmostraformCadastro(){
+    if(document.getElementById('dynamic-content-vizul').style.display == "block"){
+        document.getElementById('dynamic-content-vizul').style.display = "none"
     }
     else{
-        document.getElementById('dynamic-content').style.display = "block"
+        if(document.getElementById('dynamic-content-cadastro').style.display == "block"){
+            document.getElementById('dynamic-content-cadastro').style.display = "none"
+        }
+        else{
+            document.getElementById('dynamic-content-cadastro').style.display = "block"
+        }
     }
+    
 }
+
+function AmostraFormVizul(){
+    if(document.getElementById('dynamic-content-cadastro').style.display == "block"){
+        document.getElementById('dynamic-content-cadastro').style.display = "none"
+    }
+    else{
+        if(document.getElementById('dynamic-content-vizul').style.display == "block"){
+            document.getElementById('dynamic-content-vizul').style.display = "none"
+        }
+        else{
+            document.getElementById('dynamic-content-vizul').style.display = "block"
+        }}}
 
 function mostraMsg(y,a){
     document.getElementById('alert-msg').innerHTML = a
