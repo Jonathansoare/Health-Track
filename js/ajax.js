@@ -1,4 +1,4 @@
-let content = document.getElementById('ajax-content')
+/*let content = document.getElementById('ajax-content')
 
 function fetchContent(el) {
     const view = el.getAttribute('a-views')
@@ -20,4 +20,4 @@ function fetchContent(el) {
             script.src = `/js/${scriptSRC}.js`
             document.body.appendChild(script); 
         })
-}
+}*/

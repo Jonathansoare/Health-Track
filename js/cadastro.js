@@ -2,12 +2,18 @@ const emailInput = document.getElementById('input_email');
 const senhaInput = document.getElementById('input_senha');
 const btn = document.getElementById('btn');
 const alert = document.getElementById('alert-msg').innerHTML;
+const nomeInput = document.getElementById('nome')
+const idadeInput = document.getElementById('idade')
+const generoSelect = document.getElementById('genero')
 
 btn.addEventListener("click", (event) => {
     event.preventDefault()
 
-    email = emailInput.value;
-    senha = senhaInput.value;
+    const email = emailInput.value;
+    const senha = senhaInput.value;
+    const nome = nomeInput.value;
+    const idade = idadeInput.value;
+    const genero = generoSelect.value;
 
     if (email == "" || senha == ""){
         mostraMsg("red","Preecha todos os campos")
@@ -44,6 +50,9 @@ btn.addEventListener("click", (event) => {
         const user_dados = JSON.stringify({
             email:email,
             senha:senha,
+            nome:nome,
+            idade:idade,
+            genero:genero,
         })
         const emailLocal = JSON.parse(localStorage.getItem('user'))
 

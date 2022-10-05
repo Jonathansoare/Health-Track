@@ -18,6 +18,7 @@ else{
     validarEmail(email)
 }
 
+/* Mostra uma mensagem de alerta*/
 function mostraMsg(y,a){
     document.getElementById('alert-msg').innerHTML = a
     document.getElementById('alert-msg').style.color = y
@@ -26,6 +27,7 @@ function mostraMsg(y,a){
     }, 7000);
 }
 
+/*validar se o emial tem @*/
 function validarEmail(x){
     var emailPattern =  /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
     var resul  = emailPattern.test(x);
@@ -37,11 +39,11 @@ function validarEmail(x){
         validarUser()
     }
     else{
-        mostraMsg("red","Email errado")
+        mostraMsg('red',"Usuario ou Senha invalidor!")  
         console.log("email errado");
     }
 }
-
+/* Validar o usuario com o banco de dados*/
 function validarUser(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
 
