@@ -67,23 +67,35 @@
                     <h2>Gerenciar Atividades Físicas</h2>
                 </div>
                 <div class="panel-row">
-                    <button class="panel panel-50" a-views="cadastraAtividades" a-script="atividade"  onclick="fetchContent(this)" a-folder="atividades"><i class="fa-solid fa-plus"></i>Cadastrar Atividade </button>
-                    <button class="panel panel-50" a-views="vizualizarAtividades" a-script="atividade"  onclick="fetchContent(this)" a-folder="atividades"><i class="fa-solid fa-table"></i>Vizualizar Atividade</button>
+                    <button class="panel panel-50" onclick="amostraform()"><i class="fa-solid fa-plus"></i>Cadastrar Atividade </button>
+                    <button class="panel panel-50" onclick=""><i class="fa-solid fa-table"></i>Vizualizar Atividade</button>
                 </div>
-                <div class="content" id="ajax-content"></div>
+                <div class="dynamic-content" id="dynamic-content">
+                    <form  id="pressao-form" class="pressao-form">
+                        <div class="form-input">
+                            <label for="weight">Nome da atividade</label>
+                            <input type="text" class="input-dados" id="ative">
+                        </div>
+                        <div class="form-input">
+                            <label for="weight">Tempo de atividade</label>
+                            <input type="time" class="input-dados" id="time">
+                        </div>
+                        <div class="form-input">
+                            <label for="weight">Data da atividade</label>
+                            <input type="date" name="data_pressao" class="input-dados" id="date">
+                        </div>
+                        <div id="alert-msg" class="alert-msg"></div>
+                        <button type="submit" id="cadastra-pressao" class="btn">Cadastrar</button>
+                    </form>
+                </div>
             </div>
         </main>
     </div>
-    <script defer src="../plugins/jquery/jquey.min.js"></script>
-    <script defer src="../plugins/jquey-validation/dist/jquery.validate.min.js"></script>
-    <script defer src="../plugins/jquey-validation/dist/additional-methods.min.js"></script>
-    <script defer src="../plugins/jquey-validation/dist/localization/messages_pt_BR.min.js"></script>
-    <script defer src="/plugins/jQuery-Mask-Plugin-master/dist/jquery.mask.min.js"></script>
-    <script defer src="/plugins/package/dist/sweetalert2.all.min.js"></script>
     <script defer src="../plugins/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
     <script defer src="../plugins/fontawesome-free-6.1.1-web/js/all.min.js"></script>
     <script defer src="../js/ajax.js"></script>
     <script defer src="../js/menu.js"></script>
+    <script src="/js/atividade.js"></script>
 </body>
 
 </html>

@@ -1,32 +1,35 @@
-$(function() {
+const pressaoInput = document.getElementById('pressao')
+const pressaodate = document.getElementById('date')
+const formInput = document.getElementById('dynamic-content').innerHTML
+const abri_tela = document.getElementById('abri-pressao')
+const btn = document.getElementById('cadastra-pressao')
+btn.addEventListener("click", (el) => {
+    el.preventDefault()
 
-    $('#time_ative').mask("00:00")
-    $('#data_ative').mask("00/00/0000")
+    const pressao = pressaoInput.value;
+    const date = pressaodate.value;
 
-    $("#form-atividade").submit(function (event) {
-        event.preventDefault()
-    }).validate({
-        rules: {
-            ative: {
-                required: true,
-            },
-            time: {
-                required: true,
-            },
-            data: {
-                required: true,
-            },
-        },
-        submitHandler: function (form) {
-            Swal.fire(
-                'Sucesso',
-                'Registro realizado com sucesso ',
-                'success'
-              ).then(() =>{
-                $('#ative').val('')
-                $('#time_ative').val('')
-                $('#data_ative').val('')
-              })
-        }
-    });
+    console.log(pressao);
+    console.log(date);
 })
+
+
+
+
+
+function amostraform(){
+    if(document.getElementById('dynamic-content').style.display == "block"){
+        document.getElementById('dynamic-content').style.display = "none"
+    }
+    else{
+        document.getElementById('dynamic-content').style.display = "block"
+    }
+}
+
+function mostraMsg(y,a){
+    document.getElementById('alert-msg').innerHTML = a
+    document.getElementById('alert-msg').style.color = y
+    setTimeout(() => {
+        mostraMsg("","")
+    }, 7000);
+}

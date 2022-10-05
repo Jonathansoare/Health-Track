@@ -142,7 +142,7 @@ div#ajax-content table svg:hover {
 .dynamic-content tbody {
     color: #f8f8f8;
 }
-.form-peso{
+.form-input{
     display: flex;
     flex-direction: column;
 }

@@ -1,37 +1,37 @@
-$(function() {
+const ativiadeNome = document.getElementById('ative')
+const atividadeTime = document.getElementById('time')
+const atividadeDate = document.getElementById('date')
+const formInput = document.getElementById('dynamic-content').innerHTML
+const abri_tela = document.getElementById('abri-pressao')
+const btn = document.getElementById('cadastra-pressao')
 
-    $('#time_ative').mask("00:00")
-    $('#data_ative').mask("00/00/0000")
+btn.addEventListener("click", (el) => {
+    el.preventDefault()
 
-    $("#form-atividade").submit(function (event) {
-        event.preventDefault()
-    }).validate({
-        rules: {
-            ative: {
-                required: true,
-            },
-            time: {
-                required: true,
-            },
-            data: {
-                required: true,
-            },
-        },
-        submitHandler: function (form) {
-            Swal.fire({
-                title: 'Do you want to save the changes?',
-                showDenyButton: true,
-                showCancelButton: true,
-                confirmButtonText: 'Save',
-                denyButtonText: `Don't save`,
-              }).then((result) => {
-                /* Read more about isConfirmed, isDenied below */
-                if (result.isConfirmed) {
-                  Swal.fire('Saved!', '', 'success')
-                } else if (result.isDenied) {
-                  Swal.fire('Changes are not saved', '', 'info')
-                }
-              })
-        }
-    });
+    const pressao = pressaoInput.value;
+    const date = pressaodate.value;
+
+    console.log(pressao);
+    console.log(date);
 })
+
+
+
+
+
+function amostraform(){
+    if(document.getElementById('dynamic-content').style.display == "block"){
+        document.getElementById('dynamic-content').style.display = "none"
+    }
+    else{
+        document.getElementById('dynamic-content').style.display = "block"
+    }
+}
+
+function mostraMsg(y,a){
+    document.getElementById('alert-msg').innerHTML = a
+    document.getElementById('alert-msg').style.color = y
+    setTimeout(() => {
+        mostraMsg("","")
+    }, 7000);
+}
