@@ -51,3 +51,7 @@ function mostraMsg(y,a){
         mostraMsg("","")
     }, 7000);
 }
+function editar(){
+    AmostraformCadastro()
+    document.getElementById('dynamic-content-cadastro').style.display = "block"
+}
