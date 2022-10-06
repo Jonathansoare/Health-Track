@@ -67,10 +67,10 @@
                     <h2>Gerenciar Atividades Físicas</h2>
                 </div>
                 <div class="panel-row">
-                    <button class="panel panel-50" onclick="amostraform()"><i class="fa-solid fa-plus"></i>Cadastrar Atividade </button>
-                    <button class="panel panel-50" onclick=""><i class="fa-solid fa-table"></i>Vizualizar Atividade</button>
+                    <button class="panel panel-50" onclick="AmostraformCadastro('dynamic-content-cadastro')"><i class="fa-solid fa-plus"></i>Cadastrar Atividade </button>
+                    <button class="panel panel-50" onclick="AmostraFormVizul()"><i class="fa-solid fa-table"></i>Vizualizar Atividade</button>
                 </div>
-                <div class="dynamic-content" id="dynamic-content">
+                <div class="dynamic-content" id="dynamic-content-cadastro">
                     <form  id="pressao-form" class="pressao-form">
                         <div class="form-input">
                             <label for="weight">Nome da atividade</label>
@@ -87,6 +87,29 @@
                         <div id="alert-msg" class="alert-msg"></div>
                         <button type="submit" id="cadastra-pressao" class="btn">Cadastrar</button>
                     </form>
+                </div>
+                <div class="dynamic-content" id="dynamic-content-vizul">
+                    <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">Data</th>
+                            <th scope="col">Tipo de atividade</th>
+                            <th scope="col">Duracao</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Deletar</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th style="color: #f8f8f8;" scope="row">15/04/2022</th>
+                            <td style="color: #f8f8f8;">Futebol</td>
+                            <td style="color: #f8f8f8;">02:10</td>
+                            <td><i class="fas fa-retweet"></i></td>
+                            <td><i class="fas fa-trash"></i></td>
+                          </tr>
+                        
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </main>

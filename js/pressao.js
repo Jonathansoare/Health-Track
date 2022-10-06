@@ -1,6 +1,6 @@
 const pressaoInput = document.getElementById('pressao')
 const pressaodate = document.getElementById('date')
-const formInput = document.getElementById('dynamic-content').innerHTML
+const formInput = document.getElementById('dynamic-content-cadastro').innerHTML
 const abri_tela = document.getElementById('abri-pressao')
 const btn = document.getElementById('cadastra-pressao')
 
@@ -18,14 +18,32 @@ btn.addEventListener("click", (el) => {
 
 
 
-function amostraform(){
-    if(document.getElementById('dynamic-content').style.display == "block"){
-        document.getElementById('dynamic-content').style.display = "none"
+function AmostraformCadastro(){
+    if(document.getElementById('dynamic-content-vizul').style.display == "block"){
+        document.getElementById('dynamic-content-vizul').style.display = "none"
     }
     else{
-        document.getElementById('dynamic-content').style.display = "block"
+        if(document.getElementById('dynamic-content-cadastro').style.display == "block"){
+            document.getElementById('dynamic-content-cadastro').style.display = "none"
+        }
+        else{
+            document.getElementById('dynamic-content-cadastro').style.display = "block"
+        }
     }
+    
 }
+
+function AmostraFormVizul(){
+    if(document.getElementById('dynamic-content-cadastro').style.display == "block"){
+        document.getElementById('dynamic-content-cadastro').style.display = "none"
+    }
+    else{
+        if(document.getElementById('dynamic-content-vizul').style.display == "block"){
+            document.getElementById('dynamic-content-vizul').style.display = "none"
+        }
+        else{
+            document.getElementById('dynamic-content-vizul').style.display = "block"
+        }}}
 
 function mostraMsg(y,a){
     document.getElementById('alert-msg').innerHTML = a

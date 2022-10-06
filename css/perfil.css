@@ -37,7 +37,10 @@ div.perfil-form select {
     background-color: transparent;
     border: 1px solid #303030;
     color: #f8f8f8;
-    color: #999999;
+    border-radius: 10px;
+    height: 35px;
+    width: 100%;
+    padding-left: 3px;
     outline: none;
 }
 
