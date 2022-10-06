@@ -53,16 +53,20 @@ btn.addEventListener("click", (event) => {
             nome:nome,
             idade:idade,
             genero:genero,
+            peso: "Sem peso",
+            altura: "Sem altura",
+            data: "Sem data",
         })
         const emailLocal = JSON.parse(localStorage.getItem('user'))
 
         localStorage.setItem('user',user_dados)
+        mostraMsg("green","Usuario Cadastrado com sucesso!!")
 
         if(localStorage.getItem('user') == null){
             localStorage.setItem('user',user_dados)
         }
         else{
-            if (email == Object.entries(emailLocal)[0][1]){
+            if (email == Object.entries(emailLocal)[0][1] && email == emailLocal == ""){
                 mostraMsg("red","Usuario já cadastrado")
                 console.log("usuario ja existente");
                 console.log("======================================");

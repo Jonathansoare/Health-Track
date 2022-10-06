@@ -86,7 +86,7 @@
               a-views="vizualizarPeso"
               onclick="AmostraFormVizul()"
             >
-              <i class="fa-solid fa-table"></i> Vizualizar Peso
+              <i class="fa-solid fa-table" id="button-abrir-vizul"></i> Vizualizar Peso
             </button>
           </div>
           <div class="dynamic-content" id="dynamic-content-cadastro">
@@ -115,14 +115,12 @@
                           <th scope="col">Deletar</th>
                       </tr>
                   </thead>
-                  <tbody>
-                      <tr>
-                          <th style="color: #f8f8f8;" scope="row">05/06/2022</th>
-                          <td style="color: #f8f8f8;">68Kg</td>
-                          <td style="color: #f8f8f8;">167Cm</td>
-                          <td><i id="reset" onclick="editar()" class="fas fa-retweet"></i></td>
-                          <td><i id="trash" onclick="apagar()" class="fas fa-trash"></i></td>
-                      </tr>
+                  <tbody id="tbody">
+                    <th style="color: #f8f8f8;" scope="row" id="date-vizul"></th>
+                    <td style="color: #f8f8f8;" id="peso-vizul"></td>
+                    <td style="color: #f8f8f8;" id="altura-vizul"></td>
+                    <td><i id="reset" onclick="editar()" class="fas fa-retweet"></i></td>
+                    <td><i id="trash" onclick="apagar()" class="fas fa-trash"></i></td>
                   </tbody>
               </table>
           </div>
