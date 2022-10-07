@@ -498,3 +498,61 @@ div.type {
         display: none;
     }
 }
+
+@media screen and (max-width:430px){
+    table{
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+    table th{
+        font-size: 10px;
+        font-weight: 400;
+    }
+    table td{
+        font-size: 8px;
+        font-weight: 300;
+    }
+    .dynamic-content {
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width:370px){
+    table{
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+    table th{
+        font-size: 6px;
+        font-weight: 400;
+    }
+    table td{
+        font-size: 6px;
+        font-weight: 300;
+    }
+    .table{
+        width: 100%;
+        background-color: #121212;
+    }
+}
+@media screen and (max-width:260px){
+    table{
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+    table th{
+        font-size: 4px;
+        font-weight: 400;
+    }
+    table td{
+        font-size: 4px;
+        font-weight: 300;
+    }
+    .table{
+        width: 100%;
+        background-color: #121212;
+    }
+}
