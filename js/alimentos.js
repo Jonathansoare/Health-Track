@@ -46,9 +46,9 @@ btn.addEventListener("click", (el) => {
 function listaTabela(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
     
-    document.getElementById('date-vizul').innerHTML = Object.entries(mylocal)[13][1]
-    document.getElementById('alimentos_vizul').innerHTML = Object.entries(mylocal)[14][1]
-    document.getElementById('calorias-vizul').innerHTML = Object.entries(mylocal)[15][1]
+    document.getElementById('date-vizul').innerHTML = Object.entries(mylocal)[11][1]
+    document.getElementById('alimentos_vizul').innerHTML = Object.entries(mylocal)[11][1]
+    document.getElementById('calorias-vizul').innerHTML = Object.entries(mylocal)[11][1]
     }
 
 function AmostraformCadastro(){
