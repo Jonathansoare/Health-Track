@@ -191,7 +191,7 @@ div.imc-parent {
     padding: 10px 20px;
 }
 
-div.imc {
+div.imc{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -207,12 +207,14 @@ div.imc {
     transform: scale(1.10);
 }
 
-div.imc h2 {
+div.imc-value {
     font-weight: 300;
-    color: #72777a;
+    color: #a0a0a0;
+    font-size: 20px;
 }
 
-div.imc h2 span:nth-child(2) {
+div.imc-indese {
+    margin-left: 20px;
     color: #a777e3;
     font-weight: 600;
 }

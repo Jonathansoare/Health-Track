@@ -1,40 +1,29 @@
-function listaTabela(){
-    const mylocal = JSON.parse(localStorage.getItem('user'))
-    
-    document.getElementById('peso-ds').innerHTML = Object.entries(mylocal)[5][1] + "Kg"
-    document.getElementById('pressao-ds').innerHTML = Object.entries(mylocal)[8][1] + "MMC"
-    document.getElementById('atividade-ds').innerHTML = Object.entries(mylocal)[10][1]
-    document.getElementById('peso-ds').innerHTML = Object.entries(mylocal)[5][1]
-    }
-
-listaTabela()
-
 const mylocal = JSON.parse(localStorage.getItem('user'));
-const imc_value_ds = document.getElementById('imc-ds');
-const imc_indese_ds = document.getElementById('imc-indese-ds');
+const imc_value_imc = document.getElementById('span-imc');
+const imc_indese_imc = document.getElementById('indese-imc');
 const altura = Object.entries(mylocal)[6][1];
 const peso = Object.entries(mylocal)[5][1];
 
 function calcularIMC(x,y) {
     const imc = y / (x * x)
     const resul = imc.toFixed(2)
-    const imc_indese = 
+    const imc_indese = ""
     
     
-    document.getElementById('imc-ds').innerHTML = resul
+    document.getElementById('span-imc').innerHTML = resul
 
     if(imc < 18.6){
-        document.getElementById('imc-indese-ds').innerHTML = "Under Weight"
+        document.getElementById('indese-imc').innerHTML = "Under Weight"
 
         const imc_indese = "Under Weight"
     }
     else if(imc >= 18.6 && imc < 24.9){
-        document.getElementById('imc-indese-ds').innerHTML = "Normal"
+        document.getElementById('indese-imc').innerHTML = "Normal"
 
         const imc_indese = "Normal"
     }
     else{
-        document.getElementById('imc-indese-ds').innerHTML = "Over Weight"
+        document.getElementById('indese-imc').innerHTML = "Over Weight"
 
         const imc_indese = "Over Weight"
     }
@@ -57,6 +46,7 @@ function calcularIMC(x,y) {
         alimentos:Object.entries(mylocal)[14][1],
         calorias:Object.entries(mylocal)[15][1],
         IMC:imc,
+        IMC_indese:imc_indese 
     })
     localStorage.setItem('user',user_dados)
     console.log(Object.entries(mylocal));

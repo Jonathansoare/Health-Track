@@ -70,30 +70,30 @@
                         <div class="dashboard-box">
                             <div class="dashboard-box-wrappe">
                                 <div class="box-icon box-weigth"><i class="fa-solid fa-dumbbell" id="peso"></i></div>
-                                <div class="value">00Kg</div>
+                                <div class="value" id="peso-ds"></div>
                                 <div class="type">PESO</div>
                                 <div class="box-value-percentual box-value-weight">
-                                    <i class="fa-solid fa-angle-up"></i> 00%
+                                    <i class="fa-solid fa-angle-up" id="porce-peso-ds"></i> 00%
                                 </div>
                             </div>
                         </div>
                         <div class="dashboard-box">
                             <div class="dashboard-box-wrappe">
                                 <div class="box-icon box-pressure"><i id="coracao-pressao" class="fa-solid fa-heart-pulse "></i></div>
-                                <div class="value">00MMC</div>
+                                <div class="value" id="pressao-ds"></div>
                                 <div class="type">PRESSÃO ARTERIAL</div>
                                 <div class="box-value-percentual box-value-pressure">
-                                    <i class="fa-solid fa-angle-up"></i> 0%
+                                    <i class="fa-solid fa-angle-up" id="porce-pressao-ds"></i> 0%
                                 </div>
                             </div>
                         </div>
                         <div class="dashboard-box">
                             <div class="dashboard-box-wrappe">
                                 <div class="box-icon box-imc"><i class="fa-solid fa-calculator " id="imc"></i></div>
-                                <div class="value">00,0</div>
+                                <div class="value" id="imc-ds"></div>
                                 <div class="type">IMC</div>
                                 <div class="box-value-percentual box-value-imc">
-                                    <span>NORMAL</span>
+                                <div id="imc-indese-ds"></div>
                                 </div>
 
                             </div>
@@ -101,11 +101,11 @@
                         <div class="dashboard-box">
                             <div class="dashboard-box-wrappe">
                                 <div class="box-icon box-workout"><i class="fa-solid fa-person-biking" id="atividade"></i></div>
-                                <div class="value">...</div>
+                                <div class="value" id="atividade-ds"></div>
                                 <div class="type">atividade Fisíca</div>
                                 <div class="box-value-percentual box-value-workout">
                                     <i class="fa-solid fa-calendar"></i>
-                                    <span>06/06/2022</span>
+                                    <span id="date-atividade-ds">06/06/2022</span>
                                 </div>
                             </div>
                         </div>
@@ -116,13 +116,10 @@
     </div>
     </main>
     </div>
-    <script defer src="../plugins/jquery/jquey.min.js"></script>
-    <script defer src="../plugins/jquey-validation/dist/jquery.validate.min.js"></script>
-    <script defer src="../plugins/jquey-validation/dist/additional-methods.min.js"></script>
-    <script defer src="../plugins/jquey-validation/dist/localization/messages_pt_BR.min.js"></script>
     <script defer src="../plugins/bootstrap-5.1.3-dist/js/bootstrap.min.js "></script>
     <script defer src="../plugins/fontawesome-free-6.1.1-web/js/all.min.js "></script>
     <script defer src="../js/menu.js"></script>
+    <script src="/js/dados_dashboard.js"></script>
 </body>
 
 </html>
