@@ -31,8 +31,16 @@ btn.addEventListener("click", (el) => {
             idade:Object.entries(mylocal)[3][1],
             genero:Object.entries(mylocal)[4][1],
             peso: peso,
-            altura: altura,
+            altura:altura,
             data: today.toLocaleDateString(),
+            pressao:Object.entries(mylocal)[8][1],
+            data_pressao:Object.entries(mylocal)[9][1],
+            atividade:Object.entries(mylocal)[10][1],
+            time_atividade:Object.entries(mylocal)[11][1],
+            data_atividade:Object.entries(mylocal)[12][1],
+            data_alimento:Object.entries(mylocal)[13][1],
+            alimentos:Object.entries(mylocal)[14][1],
+            calorias:Object.entries(mylocal)[15][1],
         })
         localStorage.setItem('user',user_dados)
         mostraMsg("green","Novo peso cadastrado com sucesso!")
@@ -113,7 +121,15 @@ function apagar(){
         genero:Object.entries(mylocal)[4][1],
         peso: "Sem peso",
         altura: "Sem altura",
-        data: "Sem data",
+        data_peso: "Sem peso",
+        pressao:Object.entries(mylocal)[8][1],
+        data_pressao:Object.entries(mylocal)[9][1],
+        atividade:Object.entries(mylocal)[10][1],
+        time_atividade:Object.entries(mylocal)[11][1],
+        data_atividade:Object.entries(mylocal)[12][1],
+        data_alimento:Object.entries(mylocal)[13][1],
+        alimentos:Object.entries(mylocal)[14][1],
+        calorias:Object.entries(mylocal)[15][1],
     })
     localStorage.setItem('user',user_dados)
 }

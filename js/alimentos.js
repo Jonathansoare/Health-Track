@@ -46,9 +46,9 @@ btn.addEventListener("click", (el) => {
 function listaTabela(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
     
-    document.getElementById('date-vizul').innerHTML = Object.entries(mylocal)[11][1]
-    document.getElementById('alimentos_vizul').innerHTML = Object.entries(mylocal)[11][1]
-    document.getElementById('calorias-vizul').innerHTML = Object.entries(mylocal)[11][1]
+    document.getElementById('date-vizul').innerHTML = Object.entries(mylocal)[13][1]
+    document.getElementById('alimentos_vizul').innerHTML = Object.entries(mylocal)[14][1]
+    document.getElementById('calorias-vizul').innerHTML = Object.entries(mylocal)[15][1]
     }
 
 function AmostraformCadastro(){
@@ -104,9 +104,22 @@ function apagar(){
     document.getElementById('dynamic-content-vizul').style.display = "none"
 
     const user_dados = JSON.stringify({
-        data_alimento:"Sem data",
-        alimentos:"Sem alimentos",
-        calorias:"Sem calorias"
+        email:Object.entries(mylocal)[0][1],
+        senha:Object.entries(mylocal)[1][1],
+        nome:Object.entries(mylocal)[2][1],
+        idade:Object.entries(mylocal)[3][1],
+        genero:Object.entries(mylocal)[4][1],
+        peso: Object.entries(mylocal)[5][1],
+        altura: Object.entries(mylocal)[6][1],
+        data: Object.entries(mylocal)[7][1],
+        pressao:Object.entries(mylocal)[8][1],
+        data_pressao:Object.entries(mylocal)[9][1],
+        atividade:Object.entries(mylocal)[10][1],
+        time_atividade:Object.entries(mylocal)[11][1],
+        data_atividade:Object.entries(mylocal)[12][1],
+        data_alimento:"Sem Data",
+        alimentos:"Sem alimento",
+        calorias:"Sem calorias",
     })
     localStorage.setItem('user',user_dados)
 }

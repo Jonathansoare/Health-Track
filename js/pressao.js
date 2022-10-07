@@ -14,6 +14,7 @@ btn.addEventListener("click", (el) => {
     else{
         const mylocal = JSON.parse(localStorage.getItem('user'))
 
+        console.log(Object.entries(mylocal));
        const timeElapsed = Date.now()
        const today = new Date(timeElapsed)
 
@@ -25,17 +26,24 @@ btn.addEventListener("click", (el) => {
             genero:Object.entries(mylocal)[4][1],
             peso: Object.entries(mylocal)[5][1],
             altura: Object.entries(mylocal)[6][1],
-            data_peso: Object.entries(mylocal)[7][1],
-            pressao:pressao + "MMC",
-            data_pressao:today.toLocaleDateString()
+            data: Object.entries(mylocal)[7][1],
+            pressao:pressao,
+            data_pressao:today.toLocaleDateString(),
+            atividade:Object.entries(mylocal)[10][1],
+            time_atividade:Object.entries(mylocal)[11][1],
+            data_atividade:Object.entries(mylocal)[12][1],
+            data_alimento:Object.entries(mylocal)[13][1],
+            alimentos:Object.entries(mylocal)[14][1],
+            calorias:Object.entries(mylocal)[15][1],
         })
         localStorage.setItem('user',user_dados)
         mostraMsg("green","Novo peso cadastrado com sucesso!")
+        console.log(Object.entries(mylocal));
     }})
 function listaTabela(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
-    
-    document.getElementById('data-vizul').innerHTML = Object.entries(mylocal)[9][1]
+    console.log(Object.entries(mylocal));
+    document.getElementById('date-vizul').innerHTML = Object.entries(mylocal)[9][1]
     document.getElementById('pressao-vizul').innerHTML = Object.entries(mylocal)[8][1]
     }
 
@@ -92,8 +100,22 @@ function apagar(){
     document.getElementById('dynamic-content-vizul').style.display = "none"
 
     const user_dados = JSON.stringify({
-            pressao:"sem pressao",
-            data_pressao:"sem Data"
+        email:Object.entries(mylocal)[0][1],
+        senha:Object.entries(mylocal)[1][1],
+        nome:Object.entries(mylocal)[2][1],
+        idade:Object.entries(mylocal)[3][1],
+        genero:Object.entries(mylocal)[4][1],
+        peso: Object.entries(mylocal)[5][1],
+        altura: Object.entries(mylocal)[6][1],
+        data: Object.entries(mylocal)[7][1],
+        pressao:"Sem pressao",
+        data_pressao:"Sem data",
+        atividade:Object.entries(mylocal)[10][1],
+        time_atividade:Object.entries(mylocal)[11][1],
+        data_atividade:Object.entries(mylocal)[12][1],
+        data_alimento:Object.entries(mylocal)[13][1],
+        alimentos:Object.entries(mylocal)[14][1],
+        calorias:Object.entries(mylocal)[15][1],
     })
     localStorage.setItem('user',user_dados)
 }

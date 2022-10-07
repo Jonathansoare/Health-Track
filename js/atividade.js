@@ -18,6 +18,7 @@ btn.addEventListener("click", (el) => {
 
        const timeElapsed = Date.now()
        const today = new Date(timeElapsed)
+       
 
         const user_dados = JSON.stringify({
             email:Object.entries(mylocal)[0][1],
@@ -26,13 +27,16 @@ btn.addEventListener("click", (el) => {
             idade:Object.entries(mylocal)[3][1],
             genero:Object.entries(mylocal)[4][1],
             peso: Object.entries(mylocal)[5][1],
-            altura: Object.entries(mylocal)[6][1],
-            data_peso: Object.entries(mylocal)[7][1],
+            altura:Object.entries(mylocal)[6][1],
+            data: Object.entries(mylocal)[7][1],
             pressao:Object.entries(mylocal)[8][1],
             data_pressao:Object.entries(mylocal)[9][1],
             atividade:atividade,
             time_atividade:time,
-            data_atividade:today.toLocaleDateString()
+            data_atividade:today.toLocaleDateString(),
+            data_alimento:Object.entries(mylocal)[13][1],
+            alimentos:Object.entries(mylocal)[14][1],
+            calorias:Object.entries(mylocal)[15][1],
         })
         localStorage.setItem('user',user_dados)
         mostraMsg("green","Novo peso cadastrado com sucesso!")
@@ -103,9 +107,22 @@ function apagar(){
     document.getElementById('dynamic-content-vizul').style.display = "none"
 
     const user_dados = JSON.stringify({
+        email:Object.entries(mylocal)[0][1],
+        senha:Object.entries(mylocal)[1][1],
+        nome:Object.entries(mylocal)[2][1],
+        idade:Object.entries(mylocal)[3][1],
+        genero:Object.entries(mylocal)[4][1],
+        peso: Object.entries(mylocal)[5][1],
+        altura: Object.entries(mylocal)[6][1],
+        data_peso: Object.entries(mylocal)[7][1],
+        pressao:Object.entries(mylocal)[8][1],
+        data_pressao:Object.entries(mylocal)[9][1],
         atividade:"Sem atividade",
         time_atividade:"Sem Duração",
-        data_atividade:"Sem data",
+        data_atividade:"Sem Data",
+        data_alimento:Object.entries(mylocal)[13][1],
+        alimentos:Object.entries(mylocal)[14][1],
+        calorias:Object.entries(mylocal)[15][1],
     })
     localStorage.setItem('user',user_dados)
 }
