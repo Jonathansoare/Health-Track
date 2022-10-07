@@ -19,7 +19,6 @@ btn.addEventListener("click", (el) => {
     }
     else{
         const mylocal = JSON.parse(localStorage.getItem('user'))
-       console.log( Object.entries(mylocal))
 
        const timeElapsed = Date.now()
        const today = new Date(timeElapsed)
@@ -44,7 +43,6 @@ btn.addEventListener("click", (el) => {
         })
         localStorage.setItem('user',user_dados)
         mostraMsg("green","Novo peso cadastrado com sucesso!")
-        console.log(Object.entries(mylocal));
     }
     
 })

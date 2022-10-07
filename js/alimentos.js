@@ -5,8 +5,6 @@ const abri_tela = document.getElementById('abri-pressao')
 const btn = document.getElementById('cadastra-pressao')
 const alert = document.getElementById('alert-msg')
 
-const mylocal = JSON.parse(localStorage.getItem('user'))
-console.log(Object.entries(mylocal));
 btn.addEventListener("click", (el) => {
     el.preventDefault()
 
@@ -18,7 +16,6 @@ btn.addEventListener("click", (el) => {
     }
     else{
         const mylocal = JSON.parse(localStorage.getItem('user'))
-        console.log(Object.entries(mylocal));
        const timeElapsed = Date.now()
        const today = new Date(timeElapsed)
 
