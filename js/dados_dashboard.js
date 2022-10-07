@@ -4,7 +4,7 @@ function listaTabela(){
     document.getElementById('peso-ds').innerHTML = Object.entries(mylocal)[5][1] + "Kg"
     document.getElementById('pressao-ds').innerHTML = Object.entries(mylocal)[8][1] + "MMC"
     document.getElementById('atividade-ds').innerHTML = Object.entries(mylocal)[10][1]
-    document.getElementById('peso-ds').innerHTML = Object.entries(mylocal)[5][1]
+    document.getElementById('date-atividade-ds').innerHTML = Object.entries(mylocal)[12][1]
     }
 
 listaTabela()
@@ -24,9 +24,9 @@ function calcularIMC(x,y) {
     document.getElementById('imc-ds').innerHTML = resul
 
     if(imc < 18.6){
-        document.getElementById('imc-indese-ds').innerHTML = "Under Weight"
+        document.getElementById('imc-indese-ds').innerHTML = "Abaixo do peso"
 
-        const imc_indese = "Under Weight"
+        const imc_indese = "Abaixo do peso"
     }
     else if(imc >= 18.6 && imc < 24.9){
         document.getElementById('imc-indese-ds').innerHTML = "Normal"
@@ -34,9 +34,9 @@ function calcularIMC(x,y) {
         const imc_indese = "Normal"
     }
     else{
-        document.getElementById('imc-indese-ds').innerHTML = "Over Weight"
+        document.getElementById('imc-indese-ds').innerHTML = "Excesso de peso"
 
-        const imc_indese = "Over Weight"
+        const imc_indese = "Excesso de peso"
     }
 	
     const user_dados = JSON.stringify({
