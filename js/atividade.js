@@ -9,7 +9,7 @@ btn.addEventListener("click", (el) => {
 
     const atividade = ativiadeNome.value;
     const time = atividadeTime.value;
-    if (atividade == "" && time == ""){
+    if (atividade == "" || time == ""){
         mostraMsg("red","Preecha todos os campos")
     }
     else{
@@ -38,7 +38,7 @@ btn.addEventListener("click", (el) => {
             calorias:Object.entries(mylocal)[15][1],
         })
         localStorage.setItem('user',user_dados)
-        mostraMsg("green","Novo peso cadastrado com sucesso!")
+        mostraMsg("green","Nova atividade cadastrada com sucesso!")
     }
 })
 
@@ -91,10 +91,10 @@ function editar(){
     document.getElementById('dynamic-content-cadastro').style.display = "block"
     btn.addEventListener("click", (el) => {
         el.preventDefault()
-        document.getElementById('dynamic-content-cadastro').style.display = "none"
         setTimeout(() => {
-            AmostraFormVizul()
-        }, 2000);
+            document.getElementById('dynamic-content-cadastro').style.display = "none"
+            document.getElementById('dynamic-content-vizul').style.display = "block"
+        }, 1000);
         
     })
 

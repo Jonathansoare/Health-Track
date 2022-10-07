@@ -15,7 +15,7 @@ btn.addEventListener("click", (event) => {
     const idade = idadeInput.value;
     const genero = generoSelect.value;
 
-    if (email == "" || senha == ""){
+    if (email == "" || senha == "" || nome == "" || idade == "" || genero == ""){
         mostraMsg("red","Preecha todos os campos")
         console.log("campo vazio");
     }

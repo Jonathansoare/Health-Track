@@ -10,7 +10,7 @@ function calcularIMC(x,y) {
     const imc_indese = ""
     
     
-    document.getElementById('span-imc').innerHTML = resul
+    document.getElementById('span-imc').innerHTML = resul + " -"
 
     if(imc < 18.6){
         document.getElementById('indese-imc').innerHTML = "Abaixo do peso"

@@ -14,7 +14,7 @@ btn.addEventListener("click", (el) => {
     const peso = pesoInput.value
     const altura = alturaInput.value
 
-    if (peso == "" && altura == ""){
+    if (peso == "" || altura == ""){
         mostraMsg("red","Preecha todos os campos")
     }
     else{
@@ -96,11 +96,11 @@ function editar(){
     document.getElementById('dynamic-content-cadastro').style.display = "block"
     btn.addEventListener("click", (el) => {
         el.preventDefault()
-        document.getElementById('dynamic-content-cadastro').style.display = "none"
 
         setTimeout(() => {
-            AmostraFormVizul()
-        }, 2000);
+            document.getElementById('dynamic-content-cadastro').style.display = "none"
+            document.getElementById('dynamic-content-vizul').style.display = "block"
+        }, 1000);
         
     })
 
