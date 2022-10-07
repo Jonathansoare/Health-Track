@@ -88,8 +88,8 @@ function editar(){
         el.preventDefault()
         setTimeout(() => {
             document.getElementById('dynamic-content-cadastro').style.display = "none"
-            document.getElementById('dynamic-content-vizul').style.display = "block"
-        }, 1000);document.getElementById('dynamic-content-cadastro').style.display = "none"
+            AmostraFormVizul()
+        }, 1000);
 
     })
 

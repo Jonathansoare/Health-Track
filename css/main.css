@@ -255,11 +255,11 @@ div.imc-indese {
 }
 
 .dashboard-box:hover {
-    box-shadow: 6px 7px 14px 0px rgba(30,30,30,0.52);
--webkit-box-shadow: 6px 7px 14px 0px rgba(30,30,30,0.52);
--moz-box-shadow: 6px 7px 14px 0px rgba(30,30,30,0.52);
+    box-shadow: 14px 14px 20px 3px rgba(30,30,30,0.57);
+-webkit-box-shadow: 14px 14px 20px 3px rgba(30,30,30,0.57);
+-moz-box-shadow: 14px 14px 20px 3px rgba(30,30,30,0.57);
     transition: .5s;
-    transform: scale(1.10);
+    transform: scale(1.02);
 }
 
 div.box-icon {
