@@ -56,6 +56,14 @@ btn.addEventListener("click", (event) => {
             peso: "Sem peso",
             altura: "Sem altura",
             data: "Sem data",
+            pressao:"Sem pressao",
+            data_pressao:"Sem data",
+            atividade:"Sem atividade",
+            time_atividade:"Sem time",
+            data_atividade:"sem Duração",
+            data_alimento:"Sem data",
+            alimentos:"Sem alimentos",
+            calorias:"Sem calorias",
         })
         const emailLocal = JSON.parse(localStorage.getItem('user'))
 

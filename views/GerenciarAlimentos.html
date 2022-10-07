@@ -75,12 +75,12 @@
                 <div class="dynamic-content" id="dynamic-content-cadastro">
                     <form  id="pressao-form" class="pressao-form">
                         <div class="form-input">
-                            <label for="weight">Nova pressao Arterial</label>
-                            <input type="text" class="input-dados" id="pressao">
+                            <label for="weight">Ultima Alimentação</label>
+                            <input type="text" class="input-dados" id="alimentos">
                         </div>
                         <div class="form-input">
-                            <label for="weight">Data</label>
-                            <input type="date" name="data_pressao" class="input-dados" id="date">
+                            <label for="weight">Calorias</label>
+                            <input type="number" class="input-dados" id="calorias"/>
                         </div>
                         <div id="alert-msg" class="alert-msg"></div>
                         <button type="submit" id="cadastra-pressao" class="btn">Cadastrar</button>
@@ -91,19 +91,19 @@
                         <thead>
                           <tr>
                             <th scope="col">Data</th>
-                            <th scope="col">Peso</th>
-                            <th scope="col">Altura</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Deletar</th>
+                            <th scope="col">Ultima Alimentação</th>
+                            <th scope="col">calorias</th>
+                            <th scope="col" onclick="editar()">Editar</th>
+                            <th scope="col" onclick="apagar()">Deletar</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <th style="color: #f8f8f8;" class="label_th" scope="row">15/04/2022</th>
-                            <td style="color: #f8f8f8;" class="label_td">68Kg</td>
-                            <td style="color: #f8f8f8;">167Cm</td>
+                            <th style="color: #f8f8f8;" class="label_th" scope="row" id="date-vizul"></th>
+                            <td style="color: #f8f8f8;" class="label_td" id="alimentos_vizul"></td>
+                            <td style="color: #f8f8f8;" id="calorias-vizul"></td>
                             <td><i class="fas fa-retweet" onclick="editar()"></i></td>
-                            <td><i class="fas fa-trash"></i></td>
+                            <td><i class="fas fa-trash" onclick="apagar()"></i></td>
                           </tr>
                         
                         </tbody>

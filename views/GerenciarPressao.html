@@ -74,11 +74,7 @@
                     <form  id="pressao-form" class="pressao-form">
                         <div class="form-input">
                             <label for="weight">Nova pressao Arterial</label>
-                            <input type="text" class="input-dados" id="pressao">
-                        </div>
-                        <div class="form-input">
-                            <label for="weight">Data</label>
-                            <input type="date" name="data_pressao" class="input-dados" id="date">
+                            <input type="number" class="input-dados" id="pressao">
                         </div>
                         <div id="alert-msg" class="alert-msg"></div>
                         <button type="submit" id="cadastra-pressao" class="btn">Cadastrar</button>
@@ -96,10 +92,10 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th style="color: #f8f8f8;" scope="row">15/04/2022</th>
-                                <td style="color: #f8f8f8;">12,8 MMC</td>
+                                <th style="color: #f8f8f8;" scope="row" id="data-vizul"></th>
+                                <td style="color: #f8f8f8;" id="pressao-vizul">MMC</td>
                                 <td><i class="fas fa-retweet" onclick="editar()"></i></td>
-                                <td><i class="fas fa-trash"></i></td>
+                                <td><i class="fas fa-trash" onclick="apagar()"></i></td>
                             </tr>
                         </tbody>
                     </table>

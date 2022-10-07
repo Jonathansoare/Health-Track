@@ -80,10 +80,6 @@
                             <label for="weight">Tempo de atividade</label>
                             <input type="time" class="input-dados" id="time">
                         </div>
-                        <div class="form-input">
-                            <label for="weight">Data da atividade</label>
-                            <input type="date" name="data_pressao" class="input-dados" id="date">
-                        </div>
                         <div id="alert-msg" class="alert-msg"></div>
                         <button type="submit" id="cadastra-pressao" class="btn">Cadastrar</button>
                     </form>
@@ -101,11 +97,11 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <th style="color: #f8f8f8;" scope="row">15/04/2022</th>
-                            <td style="color: #f8f8f8;">Futebol</td>
-                            <td style="color: #f8f8f8;">02:10</td>
+                            <th style="color: #f8f8f8;" scope="row" id="date-vizul"></th>
+                            <td style="color: #f8f8f8;" id="atividade-vizul"></td>
+                            <td style="color: #f8f8f8;" id="minutos-vizul"></td>
                             <td><i class="fas fa-retweet" onclick="editar()"></i></td>
-                            <td><i class="fas fa-trash"></i></td>
+                            <td><i class="fas fa-trash" onclick="apagar()"></i></td>
                           </tr>
                         
                         </tbody>
