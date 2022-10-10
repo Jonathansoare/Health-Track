@@ -10,6 +10,7 @@ const alturaVizul = document.getElementById('altura-vizul').innerHTML
 const btn_abri_tela_vizul = document.getElementById('button-abrir-vizul')
 const mylocal = JSON.parse(localStorage.getItem('user'))
 
+
 btn.addEventListener("click", (el) => {
     el.preventDefault()
     const peso = pesoInput.value
@@ -20,6 +21,10 @@ btn.addEventListener("click", (el) => {
     }
     else{
         const mylocal = JSON.parse(localStorage.getItem('user'))
+        const pesoAntigo = Object.entries(mylocal)[5][1]
+        const pesoNovo = peso
+        const resu = (pesoNovo - pesoAntigo) / pesoNovo * 100
+        const porce = resu.toFixed()
 
        const timeElapsed = Date.now()
        const today = new Date(timeElapsed)
@@ -42,10 +47,12 @@ btn.addEventListener("click", (el) => {
         calorias:Object.entries(mylocal)[15][1],
         IMC:Object.entries(mylocal)[16][1],
         imc_indese: Object.entries(mylocal)[17][1],
+        porcentagem_peso: porce,
     })
     localStorage.setItem('user',user_dados)
     mostraMsg("green","Novo peso cadastrado com sucesso!")
     calcularIMC(altura,peso)
+    console.log(Object.entries(mylocal));
     }
 })
 
@@ -160,6 +167,7 @@ function calcularIMC(x,y) {
             calorias:Object.entries(mylocal)[15][1],
             IMC:resul,
             imc_indese: "Abaixo do peso",
+            porcentagem_peso: Object.entries(mylocal)[18][1],
         })
         localStorage.setItem('user',user_dados)
     }
@@ -183,6 +191,7 @@ function calcularIMC(x,y) {
             calorias:Object.entries(mylocal)[15][1],
             IMC:resul,
             imc_indese: "Normal",
+            porcentagem_peso: Object.entries(mylocal)[18][1],
         })
         localStorage.setItem('user',user_dados)
     }
@@ -206,6 +215,7 @@ function calcularIMC(x,y) {
         calorias:Object.entries(mylocal)[15][1],
         IMC:resul,
         imc_indese: "Excesso de peso",
+        porcentagem_peso: Object.entries(mylocal)[18][1],
     })
     localStorage.setItem('user',user_dados)
     }
