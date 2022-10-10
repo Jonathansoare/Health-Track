@@ -17,7 +17,6 @@ btn.addEventListener("click", (event) => {
 
     if (email == "" || senha == "" || nome == "" || idade == "" || genero == ""){
         mostraMsg("red","Preecha todos os campos")
-        console.log("campo vazio");
     }
     else{
         validarEmail(email)
@@ -34,15 +33,12 @@ btn.addEventListener("click", (event) => {
     function validarEmail(x){
         var emailPattern =  /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
         var resul  = emailPattern.test(x);
-        console.log("validando email...");
 
         if (resul == true){
-            console.log("email escrito certo!");
             validarUser()
         }
         else{
             mostraMsg("red","Email errado")
-            console.log("email escrito errado")
         }
     }
 
@@ -65,7 +61,7 @@ btn.addEventListener("click", (event) => {
             alimentos:"Sem alimentos",
             calorias:"00",
             IMC: "Sem IMC",
-            imc_indese: "Sem IMC"
+            imc_indese: "-"
         })
         const emailLocal = JSON.parse(localStorage.getItem('user'))
 
@@ -78,16 +74,12 @@ btn.addEventListener("click", (event) => {
         else{
             if (email == Object.entries(emailLocal)[0][1] && email == emailLocal == ""){
                 mostraMsg("red","Usuario já cadastrado")
-                console.log("usuario ja existente");
-                console.log("======================================");
                 
             }
             else{
                 localStorage.setItem('user',user_dados)
                 mostraMsg("green","Usuario Cadastrado com sucesso!!")
-                console.log("usuario cadastrado");
                 location.href = "/index.html"
-                console.log("======================================");
             }
         }
         

@@ -14,7 +14,6 @@ btn.addEventListener("click", (el) => {
     else{
         const mylocal = JSON.parse(localStorage.getItem('user'))
 
-        console.log(Object.entries(mylocal));
        const timeElapsed = Date.now()
        const today = new Date(timeElapsed)
 
@@ -35,14 +34,14 @@ btn.addEventListener("click", (el) => {
             data_alimento:Object.entries(mylocal)[13][1],
             alimentos:Object.entries(mylocal)[14][1],
             calorias:Object.entries(mylocal)[15][1],
+            IMC:Object.entries(mylocal)[16][1],
+            imc_indese: Object.entries(mylocal)[17][1],
         })
         localStorage.setItem('user',user_dados)
         mostraMsg("green","Nova pressão cadastrada com sucesso!")
-        console.log(Object.entries(mylocal));
     }})
 function listaTabela(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
-    console.log(Object.entries(mylocal));
     document.getElementById('date-vizul').innerHTML = Object.entries(mylocal)[9][1]
     document.getElementById('pressao-vizul').innerHTML = Object.entries(mylocal)[8][1]
     }

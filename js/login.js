@@ -11,7 +11,7 @@ btn.addEventListener("click", (el) => {
     email = inputEmail.value;
     senha = inputSenha.value;
 
-if (email == "" && senha == ""){
+if (email == "" || senha == ""){
     mostraMsg("red","Preecha todos os campos")
 }
 else{
@@ -32,28 +32,23 @@ function validarEmail(x){
     var emailPattern =  /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
     var resul  = emailPattern.test(x);
 
-    console.log(resul);
 
     if (resul == true){
-        console.log("email certo");
         validarUser()
     }
     else{
         mostraMsg('red',"Usuario ou Senha invalidor!")  
-        console.log("email errado");
     }
 }
 /* Validar o usuario com o banco de dados*/
 function validarUser(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
 
-
     if (email == Object.entries(mylocal)[0][1] && senha == Object.entries(mylocal)[1][1]) {
             location.href = "/views/dashboard.html"
         }
         else{
             mostraMsg('red',"Usuario ou Senha invalidor!")
-            console.log("email ou senha incorreta");
         }
 }
 })

@@ -36,6 +36,8 @@ btn.addEventListener("click", (el) => {
             data_alimento:Object.entries(mylocal)[13][1],
             alimentos:Object.entries(mylocal)[14][1],
             calorias:Object.entries(mylocal)[15][1],
+            IMC:Object.entries(mylocal)[16][1],
+            imc_indese: Object.entries(mylocal)[17][1],
         })
         localStorage.setItem('user',user_dados)
         mostraMsg("green","Nova atividade cadastrada com sucesso!")
