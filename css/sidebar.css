@@ -59,7 +59,8 @@ div.menu ul li {
 }
 
 div.menu ul li svg {
-    color: #6e8efb;
+    color:  #6e8efb;
+    opacity: .7;
     font-size: 25px;
 }
 
@@ -74,6 +75,7 @@ div.menu ul li a:hover {
     transform: scale(1.10);
     transition: .2s;
     color: #4d4d4d;
+    opacity: .9;
 }
 
 .selected {
