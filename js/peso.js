@@ -8,7 +8,7 @@ const dataVizul = document.getElementById('date-vizul').innerHTML
 const pesoVizul = document.getElementById('peso-vizul').innerHTML
 const alturaVizul = document.getElementById('altura-vizul').innerHTML
 const btn_abri_tela_vizul = document.getElementById('button-abrir-vizul')
-const mylocal = JSON.parse(localStorage.getItem('user'))
+
 
 
 btn.addEventListener("click", (el) => {
