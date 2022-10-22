@@ -6,82 +6,112 @@ const nomeInput = document.getElementById('nome')
 const idadeInput = document.getElementById('idade')
 const generoSelect = document.getElementById('genero')
 
-btn.addEventListener("click", (event) => {
-    event.preventDefault()
 
-    const email = emailInput.value;
-    const senha = senhaInput.value;
+btn.addEventListener("click", (event) => {
+    const mylocal = JSON.parse(localStorage.getItem(''))
     const nome = nomeInput.value;
     const idade = idadeInput.value;
     const genero = generoSelect.value;
+    const email = emailInput.value;
+    const senha = senhaInput.value;
+    validarUser(nome,idade,genero,email,senha)
+})
 
-    if (email == "" || senha == "" || nome == "" || idade == "" || genero == ""){
-        mostraMsg("red","Preecha todos os campos")
+function mostraMsg(a,y){
+    document.getElementById('alert-msg').innerHTML = a
+    document.getElementById('alert-msg').classList.remove('msg-erro'|| 'msg')
+    document.getElementById('alert-msg').classList.add(y)
+    document.getElementById('alert-msg').style.transition = '0.2s'
+    setTimeout(() => {
+        document.getElementById('alert-msg').innerHTML = ""
+        document.getElementById('alert-msg').classList.remove('msg-erro' && 'msg')
+        document.getElementById('alert-msg').style.transition = '0.2s'
+    }, 5000);
+}
+function erroInputs(a,y){
+    a.classList.remove("input-register-erro" || "input-register")
+    a.classList.add(y)
+}
+function validarEmail(email){
+    var emailPattern =  /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+    var resul  = emailPattern.test(email);
+    if (resul == true){
+        return true
     }
     else{
-        validarEmail(email)
+        return false
     }
-
-    function mostraMsg(y,a){
-        document.getElementById('alert-msg').innerHTML = a
-        document.getElementById('alert-msg').style.color = y
-        setTimeout(() => {
-            mostraMsg("","")
-        }, 7000);
-    }
-
-    function validarEmail(x){
-        var emailPattern =  /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
-        var resul  = emailPattern.test(x);
-
-        if (resul == true){
-            validarUser()
+}
+function validarUser(nome,idade,genero,email,senha){
+    if(validaForm(nome,idade,genero,email,senha) === true){
+        if(email === "jonathans@gmail.com"){
+            mostraMsg("Usuario já cadastrado",'msg-erro')
         }
         else{
-            mostraMsg("red","Email errado")
+            mostraMsg("Usuario cadastrado com sucesso!",'msg')
         }
+    }  
+}
+function validaForm(nome,idade,genero,email,senha){
+    if(nome === ""){
+        mostraMsg("","msg-erro")
+        mostraMsg("Nome inválido",'msg-erro')
+        erroInputs(nomeInput,"input-register-erro")
+        return false
     }
-
-    function validarUser(){
-        const user_dados = JSON.stringify({
-            email:email,
-            senha:senha,
-            nome:nome,
-            idade:idade,
-            genero:genero,
-            peso: "00",
-            altura: "0,00",
-            data: "Sem data",
-            pressao:"00",
-            data_pressao:"Sem Data",
-            atividade:"Sem atividade",
-            time_atividade:"Sem Duração",
-            data_atividade:"sem Data",
-            data_alimento:"Sem Data",
-            alimentos:"Sem alimentos",
-            calorias:"00",
-            IMC: "Sem IMC",
-            imc_indese: "-"
-        })
-        const emailLocal = JSON.parse(localStorage.getItem('user'))
-
-        localStorage.setItem('user',user_dados)
-        mostraMsg("green","Usuario Cadastrado com sucesso!!")
-
-        if(localStorage.getItem('user') == null){
-            localStorage.setItem('user',user_dados)
-        }
-        else{
-            if (email == Object.entries(emailLocal)[0][1] && email == emailLocal == ""){
-                mostraMsg("red","Usuario já cadastrado")
-                
-            }
-            else{
-                localStorage.setItem('user',user_dados)
-                mostraMsg("green","Usuario Cadastrado com sucesso!!")
-                location.href = "/index.html"
-            }
-        }
-        
-        
-    }})
+    else if(idade === ""){
+        mostraMsg("","msg-erro")
+        mostraMsg("Idade inválida",'msg-erro')
+        erroInputs(nomeInput ,"input-register")
+        erroInputs(idadeInput,"input-register-erro")
+        return false
+    }
+    else if(idade < 18){
+        mostraMsg("","msg-erro")
+        mostraMsg("So pode cria conta acima de 18 Anos",'msg-erro')
+        erroInputs(idadeInput,"input-register-erro")
+        return false
+    }
+    else if(genero === "seleciona"){
+        mostraMsg("","msg-erro")
+        mostraMsg("Selecione um Genero",'msg-erro')
+        erroInputs(idadeInput,"input-register")
+        erroInputs(generoSelect,"input-register-erro")
+        return false
+    }
+    else if(email === ""){
+        mostraMsg("","msg-erro")
+        mostraMsg("Email inválido",'msg-erro')
+        erroInputs(generoSelect,"input-register")
+        erroInputs(emailInput,"input-register-erro")
+        return false
+    }
+    else if (validarEmail(email) !== true){
+        mostraMsg("","msg-erro")
+        mostraMsg("Email inválido",'msg-erro')
+        erroInputs(emailInput,"input-register-erro")
+        return false;
+    }
+    else if(senha === ""){
+        mostraMsg("","msg-erro")
+        mostraMsg("Senha inválida",'msg-erro')
+        erroInputs(emailInput,"input-register")
+        erroInputs(senhaInput,"input-register-erro")
+        return false
+    }
+    else if(senha.length < 8){
+        mostraMsg("","msg-erro")
+        mostraMsg("Presisa der 8 caracteres",'msg-erro')
+        erroInputs(senhaInput,"input-register-erro")
+        return false
+    }
+    else{
+        mostraMsg("","msg-erro")
+        erroInputs(idadeInput,"input-register")
+        erroInputs(senhaInput,"input-register")
+        erroInputs(generoSelect,"input-register")
+        erroInputs(emailInput,"input-register")
+        erroInputs(nomeInput,"input-register")
+    }
+    return true;
+}
