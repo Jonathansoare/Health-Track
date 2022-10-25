@@ -1,4 +1,4 @@
-function listaTabela(){
+/*function listaTabela(){
     porcentagem()
     const mylocal = JSON.parse(localStorage.getItem('user'));
 
@@ -39,4 +39,4 @@ function porcentagem(){
         document.getElementById('porce-peso-ds').style.color = "red"
         document.getElementById('porce-peso-ds').style.transform = "rotate(180deg)"
     }
-}
+}*/

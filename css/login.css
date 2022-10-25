@@ -19,17 +19,6 @@
 
 }
 
-.login-form input{
-    font-size: 14px;
-    background-color: transparent;
-    border: 1px solid #303030;
-    color: #f8f8f8;
-    border-radius: 10px;
-    height: 35px;
-    width: 100%;
-    padding-left: 3px;
-}
-
 .banner-login {
     width: 50%;
     height: 100%;
@@ -116,9 +105,36 @@
     padding: 5px;
 }
 
-.alert-msg{
+.msg{
     margin-top: 5px;
     margin-bottom: 0px;
+}
+.alert-msg{
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: red;
+}
+.input-register{
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid #303030;
+    color: #f8f8f8;
+    border-radius: 10px;
+    height: 35px;
+    width: 100%;
+    padding-left: 3px;
+    outline: none;
+}
+.input-register-erro{
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid red;
+    color: #f8f8f8;
+    border-radius: 10px;
+    height: 35px;
+    width: 100%;
+    padding-left: 3px;
+    outline: none;
 }
 
 @media screen and (max-width:1200px) {
@@ -129,6 +145,12 @@
     .banner-login img {
         max-width: 400px;
     }
+    .alert-msg{
+        font-size: 14px;
+        margin-top: 5px;
+        margin-bottom: 0;
+        color: red;
+    }
 }
 
 @media screen and (max-width:999px) {
@@ -138,15 +160,36 @@
     .login-form {
         width: 100%;
     }
+    .alert-msg{
+        font-size: 12px;
+        margin-top: 5px;
+        margin-bottom: 0;
+        color: red;
+    }
 }
 
 @media screen and (max-width:700px) {
+    .alert-msg{
+        font-size: 10px;
+        margin-top: 5px;
+        margin-bottom: 0;
+        color: red;
+    }
+}
+
+@media screen and (max-width:500px) {
     .banner-login{
         display: none;
     }
     .login-form {
         width: 100%;
     }
+    .alert-msg{
+        font-size: 12px;
+        margin-top: 5px;
+        margin-bottom: 0;
+        color: red;
+    } 
 }
 
 @keyframes coracao{

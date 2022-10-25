@@ -13,6 +13,13 @@ main .main-content {
     background-color: #151515;
 }
 
+main .main-content {
+    padding: 30px;
+    width: 100%;
+    height: calc(100% - 90px);
+    overflow-y: auto;
+    background-color: #151515;
+}
 .main-content::-webkit-scrollbar-track {
     box-shadow: inset;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
