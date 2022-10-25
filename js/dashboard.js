@@ -10,17 +10,9 @@ const formAtividade = document.getElementById('main-content-gerencia-atividade')
 const formAlimento = document.getElementById('main-content-gerencia-alimento').innerHTML
 const formImc = document.getElementById('main-content-imc');
 
-btnPeso.addEventListener("click",() =>{
-    mostraTela(formPeso)
-})
-btndashboard.addEventListener("click",() => {
-    mostraTela(document.getElementById('main-content-dashboard'))
-})
 
+function mostraTela(){
+    document.getElementById('main-content-dashboard').style.display = "none"
+    document.getElementById('main-content-imc').style.display = "block"
 
-
-
-function mostraTela(x){
-    console.log("entrou");
-    document.getElementById('main-content').innerHTML = x
 }
