@@ -25,7 +25,6 @@ function listaTabela(){
     const pesoMylocal = Object.entries(dados)[1][1].peso;
     const alturaMylocal = Object.entries(dados)[1][1].altura;
     const dataMylocal = Object.entries(dados)[1][1].data
-    console.log(pesoMylocal,dataMylocal,alturaMylocal);
     
     if(pesoMylocal === null){
         document.getElementById('peso-vizul').innerHTML = "Sem peso"

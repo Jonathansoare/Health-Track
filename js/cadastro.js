@@ -166,7 +166,8 @@ function cadastraUser(nome,idade,genero,email,senha){
             porcentagem_peso: null,
             porcentagem_pressao: null,
             imc: null,
-            porcentagem_imc:null
+            porcentagem_imc:null,
+            indese:""
         }
 
 

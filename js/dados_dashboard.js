@@ -1,23 +1,22 @@
-/*function listaTabela(){
-    porcentagem()
-    const mylocal = JSON.parse(localStorage.getItem('user'));
-
-    if(Object.entries(mylocal)[16][01] == null){
-        document.getElementById('imc-ds').innerHTML = "Sem IMC";
-        console.log("Sem IMC");
-        document.getElementById('imc-indese-ds').innerHTML = ""
+const mylocal = JSON.parse(localStorage.getItem('user'))
+const dados = JSON.parse(localStorage.getItem('user'))
+function listaTabela(){
+    const pesoMylocal = Object.entries(dados)[1][1].peso;
+    const alturaMylocal = Object.entries(dados)[1][1].altura;
+    const dataMylocal = Object.entries(dados)[1][1].data
+    const porcePesoIndese = document.getElementById('porce-peso-ds')
+    
+    if(pesoMylocal === null){
+        document.getElementById('peso-ds').innerHTML = "00Kg"
+        document.getElementById('porce-peso').innerHTML = "00%"
+        porcePesoIndese.classList.add('fa-ligth fa-angle-up')
     }
     else{
-        document.getElementById('imc-ds').innerHTML = Object.entries(mylocal)[16][1]
-        document.getElementById('imc-indese-ds').innerHTML = Object.entries(mylocal)[17][1]
-    }
-    document.getElementById('peso-ds').innerHTML = Object.entries(mylocal)[5][1] + "Kg"
-    document.getElementById('pressao-ds').innerHTML = Object.entries(mylocal)[8][1] + "MMC"
-    document.getElementById('atividade-ds').innerHTML = Object.entries(mylocal)[10][1]
-    document.getElementById('date-atividade-ds').innerHTML = Object.entries(mylocal)[12][1]    
-    }
 
+    }}
 listaTabela()
+
+/*
 porcentagem()
 
 function porcentagem(){
@@ -25,7 +24,7 @@ function porcentagem(){
     const pesoInput = document.getElementById('peso')
     const peso = pesoInput.value
 
-    const pesoAntigo = Object.entries(mylocal)[18][1]
+    const pesoAntigo = Object.entries(mylocal)[1][1].peso   
     const pesoNovo = peso
 
     if(pesoNovo > pesoAntigo){
