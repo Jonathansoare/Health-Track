@@ -61,11 +61,11 @@ function editarUser(a,b,c,d,e){
 
 function mostradados(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
-    document.getElementById('input_email').value = Object.entries(mylocal)[0][1]
-    document.getElementById('inputNome').value = Object.entries(mylocal)[2][1]
-    document.getElementById('inputIdade').value = Object.entries(mylocal)[3][1]
-    document.getElementById('genero').value = Object.entries(mylocal)[4][1]
-    document.getElementById('input_senha').value = Object.entries(mylocal)[1][1]
+    document.getElementById('input-email').value = Object.entries(mylocal)[0][1].email
+    document.getElementById('input-Nome').value = Object.entries(mylocal)[0][1].nome
+    document.getElementById('input-Idade').value = Object.entries(mylocal)[0][1].idade
+    document.getElementById('genero').value = Object.entries(mylocal)[0][1].genero
+    document.getElementById('input-senha').value = Object.entries(mylocal)[0][1].senha
     
 }
 mostradados()

@@ -133,9 +133,6 @@ function validaForm(nome,idade,genero,email,senha){
 
 function cadastraUser(nome,idade,genero,email,senha){
     const mylocal = JSON.stringify(localStorage.getItem(''))
-    if(localStorage == undefined){
-        
-    }
 
     // [0]-dadosPessoais [1]-dadosPeso [2]-pressao [3]-atividade [4]-alimentos [5]-dashboard
     const user = JSON.stringify({
@@ -176,16 +173,24 @@ function cadastraUser(nome,idade,genero,email,senha){
     }) 
     const id = Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
     const emailLocal = JSON.parse(localStorage.getItem('user'))
-    if(Object.entries(emailLocal)[0][1].email === email){
-        mostraMsg("Usuario ja cadastrado",'msg-erro')
-    }else{
-        localStorage.setItem("user",user)  
+    if(localStorage.getItem('user') === null){
+        console.log("user nao existe");
+        localStorage.setItem('user',user)
+        mostraMsg("",'msg')
         mostraMsg("Usuario cadastrado com sucesso!",'msg')
     }
+    else{
+        if(Object.entries(emailLocal)[0][1].email === email){
+        mostraMsg("Usuario ja cadastrado",'msg-erro')
+        mostraMsg("",'msg')
+        console.log("usuario ja existe");
+        }else{
+            localStorage.setItem("user",user)  
+            mostraMsg("",'msg')
+            mostraMsg("Usuario cadastrado com sucesso!",'msg')
     }
-
-    
-
+    }
+}
 /*
 $(document).ready(function(){
         

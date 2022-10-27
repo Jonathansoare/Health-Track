@@ -44,12 +44,26 @@ btn.addEventListener("click", (el) => {
     }})
 function listaTabela(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
+    const dados = JSON.parse(localStorage.getItem('user'))
+    const alimentoMylocal = Object.entries(dados)[4][1].ultimo_alimento;
+    const caloriasMylocal = Object.entries(dados)[4][1].calorias;
+    const dataMylocal = Object.entries(dados)[4][1].data
     
-    document.getElementById('date-vizul').innerHTML = Object.entries(mylocal)[13][1]
-    document.getElementById('alimentos_vizul').innerHTML = Object.entries(mylocal)[14][1]
-    document.getElementById('calorias-vizul').innerHTML = Object.entries(mylocal)[15][1]
+    if(alimentoMylocal === ""){
+        document.getElementById('alimentos-vizul').innerHTML = "Sem alimentos"
     }
-
+    if(caloriasMylocal === null){
+        document.getElementById('calorias-vizul').innerHTML = "Sem calorias"
+    }
+    if(dataMylocal === null){
+        document.getElementById('date-vizul').innerHTML = "Sem data"
+    }
+    else{
+        document.getElementById('peso-vizul').innerHTML = Object.entries(dados)[4][1].alimentos;
+        document.getElementById('altura-vizul').innerHTML = Object.entries(dados)[4][1].calorias;
+        document.getElementById('date-vizul').innerHTML = Object.entries(dados)[4][1].data;
+    }
+}
 function AmostraformCadastro(){
     if(document.getElementById('dynamic-content-vizul').style.display == "block"){
         document.getElementById('dynamic-content-vizul').style.display = "none"

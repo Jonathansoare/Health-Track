@@ -46,10 +46,25 @@ btn.addEventListener("click", (el) => {
 
 function listaTabela(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
+    const dados = JSON.parse(localStorage.getItem('user'))
+    const atividadeMylocal = Object.entries(dados)[3][1].tipo;
+    const duracaoMylocal = Object.entries(dados)[3][1].duracao;
+    const dataMylocal = Object.entries(dados)[3][1].data
     
-    document.getElementById('date-vizul').innerHTML = Object.entries(mylocal)[12][1]
-    document.getElementById('atividade-vizul').innerHTML = Object.entries(mylocal)[10][1]
-    document.getElementById('minutos-vizul').innerHTML = Object.entries(mylocal)[11][1]
+    if(atividadeMylocal === ""){
+        document.getElementById('atividade-vizul').innerHTML = "Sem atividade"
+    }
+    if(duracaoMylocal === null){
+        document.getElementById('minutos-vizul').innerHTML = "Sem duração"
+    }
+    if(dataMylocal === null){
+        document.getElementById('date-vizul').innerHTML = "Sem data"
+    }
+    else{
+        document.getElementById('peso-vizul').innerHTML = Object.entries(dados)[3][1].alimentos;
+        document.getElementById('altura-vizul').innerHTML = Object.entries(dados)[3][1].calorias;
+        document.getElementById('date-vizul').innerHTML = Object.entries(dados)[3][1].data;
+    }
     }
 
 function AmostraformCadastro(){
