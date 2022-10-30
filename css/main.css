@@ -243,6 +243,12 @@ div.imc-indese {
     background-color: #121212;
 }
 
+.indese-peso-ds{
+    color: white;
+    padding-right: 5px;
+    font-size: 24px;
+}
+
 .dashboard-box:hover {
     box-shadow: 14px 14px 20px 3px rgba(30,30,30,0.57);
     -webkit-box-shadow: 14px 14px 20px 3px rgba(30,30,30,0.57);
@@ -283,6 +289,7 @@ div.type {
 .box-weigth {
     background-color: rgba(110, 142, 251, 0.1);
     color: #6e8efb;
+
 }
 
 .box-pressure {
