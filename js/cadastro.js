@@ -8,8 +8,14 @@ const generoSelect = document.getElementById('genero')
 document.addEventListener("click", (e) =>{
     const el = e.target;
 
+    const nome = nomeInput.value;
+    const idade = idadeInput.value;
+    const genero = generoSelect.value;
+    const email = emailInput.value;
+    const senha = senhaInput.value;
+
     if(el.classList.contains('btn')){
-        validaForm()
+        validaForm(nome,idade,genero,email,senha)
     }
 })
 
@@ -138,59 +144,88 @@ function validaInputSenha(){
     }
 }
 
-function validaForm(){
+function validaForm(nome,idade,genero,email,senha){
     if(validaInputNome() === true && validaInputIdade() === true && validaGenero() === true && validaInputEmail() === true && validaInputSenha() === true){
-        cadastrauser()
+        cadastrauser(nome,idade,genero,email,senha)
     }
 }
 
 
-function cadastrauser(){
-    alert("Usuario cadastrado com sucesso!");
+function cadastrauser(nome,idade,genero,email,senha){
+    const mylocal = JSON.parse(localStorage.getItem('user'))
+
+    const user = JSON.stringify({
+        nome:nome,
+        idade:idade,
+        genero:genero,
+        email:email,
+        senha:senha,
+        peso:null,
+        altura:null,
+        data:null,
+        data:null,
+        pressao:null,
+        data:null,
+        tipo:'',
+        duracao:null,
+        data: null,
+        ultimo_alimento: '',
+        calorias: null,
+        porcentagem_peso: null,
+        porcentagem_pressao: null,
+        imc: null,
+        porcentagem_imc:null,
+        indese:""
+    })
+
+    if(localStorage.getItem('user') === null){
+        console.log("user nao existe");
+        localStorage.setItem('user',user)
+        mostraMsg("",'msg')
+        mostraMsg("Usuario cadastrado com sucesso!",'msg')
+    }
+    else{
+        if((mylocal).email === email){
+        mostraMsg("Usuario ja cadastrado",'msg-erro')
+        }else{
+            localStorage.setItem("user",user)  
+            mostraMsg("",'msg')
+            mostraMsg("Usuario cadastrado com sucesso!",'msg')
+    }
+    }
+
 }
+
 
 /*
 function cadastraUser(nome,idade,genero,nome,senha){
     const mylocal = JSON.stringify(localStorage.getItem(''))
 
-    // [0]-dadosPessoais [1]-dadosPeso [2]-pressao [3]-atividade [4]-alimentos [5]-dashboard
+    [0]-dadosPessoais [1]-dadosPeso [2]-pressao [3]-atividade [4]-alimentos [5]-dashboard
     const user = JSON.stringify({
-        dadosPessoais:{
-            nome:nome,
-            nome:nome,
-            idade:idade,
-            genero:genero,
-            senha:senha
-        },
-        dadosPeso:{
-            peso:Object.entries(mylocal)[1][1].peso || null,
-            altura:Object.entries(mylocal)[1][1].altura || null,
-            data:Object.entries(mylocal)[1][1].data || null,
-        },
-        pressao:{
-            data:Object.entries(mylocal)[2][1].data || null,
-            pressao:Object.entries(mylocal)[2][1].pressao || null,
-        },
-        atividade:{
-            data:Object.entries(mylocal)[3][1].data || null,
-            tipo:Object.entries(mylocal)[3][1].tipo || '',
-            duracao:Object.entries(mylocal)[3][1].duracao || null,
-        },
-        alimento:{
-            data: null,
-            ultimo_alimento: '',
-            calorias: null
-        },
-        dashboard:{
-            porcentagem_peso: null,
-            porcentagem_pressao: null,
-            imc: null,
-            porcentagem_imc:null,
-            indese:""
-        }
-
-
-    }) 
+        nome:nome,
+        nome:nome,
+        idade:idade,
+        genero:genero,
+        senha:senha
+        peso:Object.entries(mylocal)[1][1].peso || null,
+        altura:Object.entries(mylocal)[1][1].altura || null,
+        data:Object.entries(mylocal)[1][1].data || null,
+        data:Object.entries(mylocal)[2][1].data || null,
+        pressao:Object.entries(mylocal)[2][1].pressao || null,
+        data:Object.entries(mylocal)[3][1].data || null,
+        tipo:Object.entries(mylocal)[3][1].tipo || '',
+        duracao:Object.entries(mylocal)[3][1].duracao || null,
+        data: null,
+        ultimo_alimento: '',
+        calorias: null
+        porcentagem_peso: null,
+        porcentagem_pressao: null,
+        imc: null,
+        porcentagem_imc:null,
+        indese:""
+    }
+}) 
     const id = Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
     const nomeLocal = JSON.parse(localStorage.getItem('user'))
     if(localStorage.getItem('user') === null){

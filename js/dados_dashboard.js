@@ -1,9 +1,9 @@
 const mylocal = JSON.parse(localStorage.getItem('user'))
-const dados = JSON.parse(localStorage.getItem('user'))
+    const dados = JSON.parse(localStorage.getItem('user'))
 function listaTabela(){
-    const pesoMylocal = Object.entries(dados)[1][1].peso;
-    const alturaMylocal = Object.entries(dados)[1][1].altura;
-    const dataMylocal = Object.entries(dados)[1][1].data
+    const pesoMylocal =  (mylocal).peso;
+    const alturaMylocal =  (mylocal).altura;
+    const dataMylocal =  (mylocal).data
     const porcePesoIndese = document.getElementById('porce-peso-ds').innerHTML
     
     boxPeso()

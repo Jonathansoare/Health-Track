@@ -84,10 +84,10 @@ function mostraMsg(a,y){
 function validarUser(){
     const email = inputEmail.value;
     const senha = inputSenha.value;
-    const emailLocal = JSON.parse(localStorage.getItem('user'))
+    const mylocal = JSON.parse(localStorage.getItem('user'))
 
     if(validaEmail() === true && validaPassword() === true){
-        if(email === Object.entries(emailLocal)[0][1].email && senha === Object.entries(emailLocal)[0][1].senha){
+        if(email === (mylocal).email && senha === (mylocal).senha){
             location.href = 'views/dashboard.html'
             return true
         }

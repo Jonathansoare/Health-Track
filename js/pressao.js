@@ -42,9 +42,8 @@ btn.addEventListener("click", (el) => {
     }})
 function listaTabela(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
-    const dados = JSON.parse(localStorage.getItem('user'))
-    const pressaoMylocal = Object.entries(dados)[2][1].pressao;
-    const dataMylocal = Object.entries(dados)[2][1].data
+    const pressaoMylocal = (mylocal).pressao;
+    const dataMylocal = (mylocal).data
 
     if(pressaoMylocal === null){
         document.getElementById('pressao-vizul').innerHTML = "Sem pressão"
@@ -53,8 +52,8 @@ function listaTabela(){
         document.getElementById('date-vizul').innerHTML = "Sem data"
     }
     else{
-        document.getElementById('pressao-vizul').innerHTML = Object.entries(dados)[2][1].pressao;
-        document.getElementById('date-vizul').innerHTML = Object.entries(dados)[2][1].data;
+        document.getElementById('pressao-vizul').innerHTML = (mylocal).pressao;
+        document.getElementById('date-vizul').innerHTML = (mylocal).data;
     }
     }
 

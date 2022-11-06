@@ -46,10 +46,9 @@ btn.addEventListener("click", (el) => {
 
 function listaTabela(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
-    const dados = JSON.parse(localStorage.getItem('user'))
-    const atividadeMylocal = Object.entries(dados)[3][1].tipo;
-    const duracaoMylocal = Object.entries(dados)[3][1].duracao;
-    const dataMylocal = Object.entries(dados)[3][1].data
+    const atividadeMylocal = (mylocal).tipo;
+    const duracaoMylocal =  (mylocal).duracao;
+    const dataMylocal =  (mylocal).data
     
     if(atividadeMylocal === ""){
         document.getElementById('atividade-vizul').innerHTML = "Sem atividade"
@@ -61,9 +60,9 @@ function listaTabela(){
         document.getElementById('date-vizul').innerHTML = "Sem data"
     }
     else{
-        document.getElementById('peso-vizul').innerHTML = Object.entries(dados)[3][1].alimentos;
-        document.getElementById('altura-vizul').innerHTML = Object.entries(dados)[3][1].calorias;
-        document.getElementById('date-vizul').innerHTML = Object.entries(dados)[3][1].data;
+        document.getElementById('peso-vizul').innerHTML = (mylocal).alimentos;
+        document.getElementById('altura-vizul').innerHTML =  (mylocal).calorias;
+        document.getElementById('date-vizul').innerHTML = (mylocal).data;
     }
     }
 

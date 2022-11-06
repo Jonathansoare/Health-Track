@@ -4,8 +4,8 @@ const mylocal = JSON.parse(localStorage.getItem('user'));
 function listaTabela(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
     const dados = JSON.parse(localStorage.getItem('user'))
-    const imcMylocal = Object.entries(dados)[5][1].imc;
-    const indeseMylocal = Object.entries(dados)[5][1].indese
+    const imcMylocal =  (mylocal).imc;
+    const indeseMylocal =  (mylocal).indese
     
     if(imcMylocal === null){
         document.getElementById('span-imc').innerHTML = "Sem IMC"
@@ -14,8 +14,8 @@ function listaTabela(){
         document.getElementById('indese-imc').innerHTML =""
     }
     else{
-        document.getElementById('span-imc').innerHTML = Object.entries(dados)[5][1].imc;
-        document.getElementById('indese-imc').innerHTML ="-" + Object.entries(dados)[5][1].indese;
+        document.getElementById('span-imc').innerHTML =  (mylocal).imc;
+        document.getElementById('indese-imc').innerHTML ="-" +  (mylocal).indese;
     }
 }
 listaTabela()

@@ -35,7 +35,7 @@ function mostraMsg(y,a){
 
 function editarUser(a,b,c,d,e){
     const mylocal = JSON.parse(localStorage.getItem('user'))
-
+    /*
     const user_dados = JSON.stringify({
         email:a,
         senha:b,
@@ -56,16 +56,16 @@ function editarUser(a,b,c,d,e){
     })
 
     localStorage.setItem('user',user_dados)
-    mostraMsg("green","Usuario editado com sucesso")
+    mostraMsg("green","Usuario editado com sucesso")*/
 }
 
 function mostradados(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
-    document.getElementById('input-email').value = Object.entries(mylocal)[0][1].email
-    document.getElementById('input-Nome').value = Object.entries(mylocal)[0][1].nome
-    document.getElementById('input-Idade').value = Object.entries(mylocal)[0][1].idade
-    document.getElementById('genero').value = Object.entries(mylocal)[0][1].genero
-    document.getElementById('input-senha').value = Object.entries(mylocal)[0][1].senha
+    document.getElementById('input-email').value = (mylocal).email
+    document.getElementById('input-Nome').value = (mylocal).nome
+    document.getElementById('input-Idade').value = (mylocal).idade
+    document.getElementById('genero').value = (mylocal).genero
+    document.getElementById('input-senha').value = (mylocal).senha
     
 }
 mostradados()
