@@ -19,12 +19,9 @@ document.addEventListener("click", (e) => {
 })
 
 function validarLogin(){
-    let time = setInterval(function () {
-        if(validaEmail() === true && validaPassword() === true){
-            clearInterval(time)
-        }
-    },1000);
-    validarUser();
+    if(validaEmail() === true && validaPassword() === true){
+        validarUser()
+    }
 }
 
 function validaEmail(){
@@ -33,7 +30,7 @@ function validaEmail(){
     function validarEmail(email){
         var emailPattern =  /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
         var resul  = emailPattern.test(email);
-        if (resul == true){
+        if (resul === true){
             return true
         }
         else{
