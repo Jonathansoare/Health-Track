@@ -1,29 +1,29 @@
 const emailInput = document.getElementById('input-email');
 const senhaInput = document.getElementById('input-senha');
 const nomeInput = document.getElementById('input-Nome')
-const btn = document.getElementById('btn-salva');
+const btnSalva = document.getElementById('btn-salva');
+const btnExcluir = document.getElementById('btn-excluir-conta')
 const alert = document.getElementById('msg').innerHTML;
 const idadeInput = document.getElementById('input-Idade')
 const generoSelect = document.getElementById('genero')
 
-document.addEventListener("click",(e) =>{
-    const el = e.target
+btnSalva.addEventListener("click",(el) =>{
+    el.preventDefault()
     const email = emailInput.value;
     const senha = senhaInput.value;
     const nome = nomeInput.value;
     const idade = idadeInput.value;
     const genero = generoSelect.value;
 
-    
-
-    if(el.classList.contains("btn-salva")){
-        editarUser(nome,idade,genero,email,senha)
-    }
-    else if(el.classList.contains("btn-excluir-conta")){
-        excluirConta()
-    }
-    e.target()
+    editarUser(nome,idade,genero,email,senha)    
 })
+
+btnExcluir.addEventListener('click', (el) =>{
+    el.preventDefault()
+    excluirConta()
+})
+
+
 
 function erroInputs(a,y){
     a.classList.remove("input-register-erro" || "input-register")
