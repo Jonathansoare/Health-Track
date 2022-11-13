@@ -11,56 +11,35 @@ btn.addEventListener("click", (el) => {
     const alimentos = alimentacaoInput.value;
     const calorias = caloriasInput.value;
 
-    if (alimentos == "" || calorias == ""){
-        mostraMsg("red","Preecha todos os campos")
+    if (alimentos == ""){
+        mostraMsg("Alimento invalido",'msg-erro')
+    }
+    else if( calorias === ''){
+        mostraMsg("Caloria invalida")
     }
     else{
-        const mylocal = JSON.parse(localStorage.getItem('user'))
-       const timeElapsed = Date.now()
-       const today = new Date(timeElapsed)
-
-        const user_dados = JSON.stringify({
-            email:Object.entries(mylocal)[0][1],
-            senha:Object.entries(mylocal)[1][1],
-            nome:Object.entries(mylocal)[2][1],
-            idade:Object.entries(mylocal)[3][1],
-            genero:Object.entries(mylocal)[4][1],
-            peso: Object.entries(mylocal)[5][1],
-            altura: Object.entries(mylocal)[6][1],
-            data_peso: Object.entries(mylocal)[7][1],
-            pressao:Object.entries(mylocal)[8][1],
-            data_pressao:Object.entries(mylocal)[9][1],
-            atividade:Object.entries(mylocal)[10][1],
-            time_atividade:Object.entries(mylocal)[11][1],
-            data_atividade:Object.entries(mylocal)[12][1],
-            data_alimento:today.toLocaleDateString(),
-            alimentos:alimentos,
-            calorias:calorias,
-            IMC:Object.entries(mylocal)[16][1],
-            imc_indese: Object.entries(mylocal)[17][1],
-        })
-        localStorage.setItem('user',user_dados)
-        mostraMsg("green","Novo alimento cadastrado com sucesso!")
-    }})
+        cadastraAlimento(alimentos,calorias)
+    }
+    })
 function listaTabela(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
     const alimentoMylocal =  (mylocal).ultimo_alimento;
     const caloriasMylocal =  (mylocal).calorias;
-    const dataMylocal =  (mylocal).data
+    const dataMylocal =  (mylocal).dataAlimento
     
     if(alimentoMylocal === ""){
         document.getElementById('alimentos-vizul').innerHTML = "Sem alimentos"
     }
-    if(caloriasMylocal === null){
+    if(caloriasMylocal === ''){
         document.getElementById('calorias-vizul').innerHTML = "Sem calorias"
     }
     if(dataMylocal === null){
         document.getElementById('date-vizul').innerHTML = "Sem data"
     }
     else{
-        document.getElementById('peso-vizul').innerHTML =  (mylocal).alimentos;
+        document.getElementById('peso-vizul').innerHTML = ( mylocal).alimentos;
         document.getElementById('altura-vizul').innerHTML =  (mylocal).calorias;
-        document.getElementById('date-vizul').innerHTML =  (mylocal).data;
+        document.getElementById('date-vizul').innerHTML =  (mylocal).dataAlimennto;
     }
 }
 function AmostraformCadastro(){
@@ -89,12 +68,20 @@ function AmostraFormVizul(){
             document.getElementById('dynamic-content-vizul').style.display = "block"
             listaTabela()
         }}}
-function mostraMsg(y,a){
+function mostraMsg(a,y){
     document.getElementById('alert-msg').innerHTML = a
-    document.getElementById('alert-msg').style.color = y
+    document.getElementById('alert-msg').classList.remove('msg-erro'|| 'msg')
+    document.getElementById('alert-msg').classList.add(y)
+    document.getElementById('alert-msg').style.transition = '0.2s'
     setTimeout(() => {
-        mostraMsg("","")
-    }, 7000);
+        document.getElementById('alert-msg').innerHTML = ""
+        document.getElementById('alert-msg').classList.remove('msg-erro' && 'msg')
+        document.getElementById('alert-msg').style.transition = '0.2s'
+    }, 5000);
+}
+function erroInputs(a,y){
+    a.classList.remove("input-register-erro" || "input-register")
+    a.classList.add(y)
 }
 function editar(){
     AmostraformCadastro()
@@ -133,4 +120,41 @@ function apagar(){
         calorias:"Sem calorias",
     })
     localStorage.setItem('user',user_dados)
+}
+
+function cadastraAlimento(alimento,calorias){
+    const mylocal = JSON.parse(localStorage.getItem('user'))
+    const data = new Date();
+    let dia = data.getDate()
+    let ano = data.getFullYear()
+    let diaMes = data.getMonth()
+    // [0]-dadosPessoais [1]-dadosPeso [2]-pressao [3]-atividade [4]-alimentos [5]-dashboard
+    const user = JSON.stringify({
+        nome:mylocal.nome,
+        idade:mylocal.idade,
+        genero:mylocal.genero,
+        email:mylocal.email,
+        senha:mylocal.senha,
+        peso:mylocal.peso,
+        altura:mylocal.altura,
+        dataPeso:mylocal.dataPeso,
+        dataPressao:mylocal.dataPressao,
+        pressao:mylocal.pressao,
+        dataAtividade:mylocal.data,
+        tipo:mylocal.tipo,
+        duracao:mylocal.duracao,
+        dataAlimento:dia+'/'+diaMes+'/'+ano ,
+        ultimo_alimento:alimento,
+        calorias:calorias,
+        porcentagem_peso:mylocal.porcentagem_peso,
+        porcentagem_pressao:mylocal.porcentagem_pressao,
+        imc: mylocal.imc,
+        porcentagem_imc:mylocal.porcentagem_imc,
+        indese:mylocal.indese
+    })
+    localStorage.setItem('user',user)
+    mostraMsg("Pressao cadastrada com sucesso!",'msg')
+    setTimeout(() => {
+        AmostraFormVizul()
+    }, 3000);
 }

@@ -12,34 +12,9 @@ btn.addEventListener("click", (el) => {
         mostraMsg("red","Preecha todos os campos")
     }
     else{
-        const mylocal = JSON.parse(localStorage.getItem('user'))
-
-       const timeElapsed = Date.now()
-       const today = new Date(timeElapsed)
-
-        const user_dados = JSON.stringify({
-            email:Object.entries(mylocal)[0][1],
-            senha:Object.entries(mylocal)[1][1],
-            nome:Object.entries(mylocal)[2][1],
-            idade:Object.entries(mylocal)[3][1],
-            genero:Object.entries(mylocal)[4][1],
-            peso: Object.entries(mylocal)[5][1],
-            altura: Object.entries(mylocal)[6][1],
-            data: Object.entries(mylocal)[7][1],
-            pressao:pressao,
-            data_pressao:today.toLocaleDateString(),
-            atividade:Object.entries(mylocal)[10][1],
-            time_atividade:Object.entries(mylocal)[11][1],
-            data_atividade:Object.entries(mylocal)[12][1],
-            data_alimento:Object.entries(mylocal)[13][1],
-            alimentos:Object.entries(mylocal)[14][1],
-            calorias:Object.entries(mylocal)[15][1],
-            IMC:Object.entries(mylocal)[16][1],
-            imc_indese: Object.entries(mylocal)[17][1],
-        })
-        localStorage.setItem('user',user_dados)
-        mostraMsg("green","Nova pressão cadastrada com sucesso!")
-    }})
+        cadastraPressao(pressao)
+    }
+})
 function listaTabela(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
     const pressaoMylocal = (mylocal).pressao;
@@ -53,7 +28,7 @@ function listaTabela(){
     }
     else{
         document.getElementById('pressao-vizul').innerHTML = (mylocal).pressao;
-        document.getElementById('date-vizul').innerHTML = (mylocal).data;
+        document.getElementById('date-vizul').innerHTML = (mylocal).dataPressao;
     }
     }
 
@@ -83,12 +58,20 @@ function AmostraFormVizul(){
             document.getElementById('dynamic-content-vizul').style.display = "block"
             listaTabela()
         }}}
-function mostraMsg(y,a){
+function mostraMsg(a,y){
     document.getElementById('alert-msg').innerHTML = a
-    document.getElementById('alert-msg').style.color = y
+    document.getElementById('alert-msg').classList.remove('msg-erro'|| 'msg')
+    document.getElementById('alert-msg').classList.add(y)
+    document.getElementById('alert-msg').style.transition = '0.2s'
     setTimeout(() => {
-        mostraMsg("","")
-    }, 7000);
+        document.getElementById('alert-msg').innerHTML = ""
+        document.getElementById('alert-msg').classList.remove('msg-erro' && 'msg')
+        document.getElementById('alert-msg').style.transition = '0.2s'
+    }, 5000);
+}
+function erroInputs(a,y){
+    a.classList.remove("input-register-erro" || "input-register")
+    a.classList.add(y)
 }
 function editar(){
     AmostraformCadastro()
@@ -128,4 +111,56 @@ function apagar(){
         calorias:Object.entries(mylocal)[15][1],
     })
     localStorage.setItem('user',user_dados)
+}
+
+function porcentagemPressao(){
+    const mylocal = JSON.parse(localStorage.getItem('user'))
+    const pressaoNovo = pressaoInput.value
+    const pressaoAntiga = mylocal.pressao
+
+    if(pressaoAntiga === null){
+        pressaoAntiga = 0
+    }
+
+    const porcentagem = pressaoNovo / pressaoAntiga -1
+    const porceFinal = (porcentagem * 100).toFixed(2)
+    return porceFinal
+
+}
+
+function cadastraPressao(pressao){
+    const mylocal = JSON.parse(localStorage.getItem('user'))
+    const data = new Date();
+    let dia = data.getDate()
+    let ano = data.getFullYear()
+    let diaMes = data.getMonth()
+    // [0]-dadosPessoais [1]-dadosPeso [2]-pressao [3]-atividade [4]-alimentos [5]-dashboard
+    const user = JSON.stringify({
+        nome:mylocal.nome,
+        idade:mylocal.idade,
+        genero:mylocal.genero,
+        email:mylocal.email,
+        senha:mylocal.senha,
+        peso:mylocal.peso,
+        altura:mylocal.altura,
+        dataPeso:mylocal.dataPeso,
+        dataPressao:dia+'/'+diaMes+'/'+ano,
+        pressao:pressao,
+        dataAtividade:mylocal.data,
+        tipo:mylocal.tipo,
+        duracao:mylocal.duracao,
+        dataAlimento: mylocal.data,
+        ultimo_alimento: mylocal.ultimo_alimento,
+        calorias: mylocal.calorias,
+        porcentagem_peso:mylocal.porcentagem_peso,
+        porcentagem_pressao:porcentagemPressao(),
+        imc: mylocal.imc,
+        porcentagem_imc:mylocal.porcentagem_imc,
+        indese:mylocal.indese
+    })
+    localStorage.setItem('user',user)
+    mostraMsg("Pressao cadastrada com sucesso!",'msg')
+    setTimeout(() => {
+        AmostraFormVizul()
+    }, 3000);
 }

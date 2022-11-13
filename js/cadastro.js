@@ -162,13 +162,13 @@ function cadastrauser(nome,idade,genero,email,senha){
         senha:senha,
         peso:null,
         altura:null,
-        data:null,
-        data:null,
+        dataPeso:null,
+        dataPressao:null,
         pressao:null,
-        data:null,
+        dataAtividade:null,
         tipo:'',
         duracao:null,
-        data: null,
+        dataAlimento: null,
         ultimo_alimento: '',
         calorias: null,
         porcentagem_peso: null,
@@ -186,13 +186,13 @@ function cadastrauser(nome,idade,genero,email,senha){
     }
     else{
         if((mylocal).email === email){
-        mostraMsg("Usuario ja cadastrado",'msg-erro')
+            mostraMsg("Usuario ja cadastrado",'msg-erro')
         }else{
             localStorage.setItem("user",user)  
             mostraMsg("",'msg')
             mostraMsg("Usuario cadastrado com sucesso!",'msg')
-    }
-    }
+        }
+        }
 
 }
 
