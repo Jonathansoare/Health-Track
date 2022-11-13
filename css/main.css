@@ -205,6 +205,8 @@ div.imc-indese {
     margin-left: 20px;
     color: #a777e3;
     font-weight: 600;
+    font-family: Roboto, sans-serif;
+    text-transform: uppercase;
 }
 
 .dashboard-content {

@@ -14,8 +14,8 @@ function listaTabela(){
         document.getElementById('indese-imc').innerHTML =""
     }
     else{
-        document.getElementById('span-imc').innerHTML =  (mylocal).imc;
-        document.getElementById('indese-imc').innerHTML ="-" +  (mylocal).indese;
+        document.getElementById('span-imc').innerHTML =  (mylocal).imc + " -";
+        document.getElementById('indese-imc').innerHTML = (mylocal).indese;
     }
 }
 listaTabela()
