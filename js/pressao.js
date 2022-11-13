@@ -9,7 +9,7 @@ btn.addEventListener("click", (el) => {
     const pressao = pressaoInput.value
 
     if(pressao == ""){
-        mostraMsg("red","Preecha todos os campos")
+        mostraMsg("Pressão invalida",'msg-erro')
     }
     else{
         cadastraPressao(pressao)

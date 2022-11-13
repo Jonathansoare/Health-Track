@@ -15,7 +15,7 @@ btn.addEventListener("click", (el) => {
         mostraMsg("Alimento invalido",'msg-erro')
     }
     else if( calorias === ''){
-        mostraMsg("Caloria invalida")
+        mostraMsg("Caloria invalida",'msg-erro')
     }
     else{
         cadastraAlimento(alimentos,calorias)
