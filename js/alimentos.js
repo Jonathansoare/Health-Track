@@ -21,6 +21,7 @@ btn.addEventListener("click", (el) => {
         cadastraAlimento(alimentos,calorias)
     }
     })
+
 function listaTabela(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
     const alimentoMylocal =  (mylocal).ultimo_alimento;
@@ -37,9 +38,9 @@ function listaTabela(){
         document.getElementById('date-vizul').innerHTML = "Sem data"
     }
     else{
-        document.getElementById('peso-vizul').innerHTML = ( mylocal).alimentos;
-        document.getElementById('altura-vizul').innerHTML =  (mylocal).calorias;
-        document.getElementById('date-vizul').innerHTML =  (mylocal).dataAlimennto;
+        document.getElementById('alimentos-vizul').innerHTML = ( mylocal).ultimo_alimento;
+        document.getElementById('calorias-vizul').innerHTML =  (mylocal).calorias;
+        document.getElementById('date-vizul').innerHTML =  (mylocal).dataAlimento;
     }
 }
 function AmostraformCadastro(){
@@ -67,7 +68,7 @@ function AmostraFormVizul(){
         else{
             document.getElementById('dynamic-content-vizul').style.display = "block"
             listaTabela()
-        }}}
+}}}
 function mostraMsg(a,y){
     document.getElementById('alert-msg').innerHTML = a
     document.getElementById('alert-msg').classList.remove('msg-erro'|| 'msg')
