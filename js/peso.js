@@ -133,10 +133,9 @@ function indeseImc(imc){
 }
 
 function porcentagemImc(peso,altura){
-    const mylocal = JSON.stringify(localStorage.getItem('user'))
-    const imcAntigo = Object.entries(mylocal)[4][1].imc;
-    if(imcAntigo === undefined || imcAntigo === 0){
-        console.log("nao tem no db");
+    const mylocal = JSON.parse(localStorage.getItem('user'))
+    const imcAntigo = mylocal.imc;
+    if(imcAntigo === null || imcAntigo === 0){
         return 0
     }
     else if (imcAntigo > 0){
@@ -184,7 +183,7 @@ function cadastraPeso(peso,altura){
         dataPeso:dia+'/'+diaMes+'/'+ano,
         dataPressao:mylocal.dataPressao,
         pressao:mylocal.pressao,
-        dataAtividade:mylocal.data,
+        dataAtividade:mylocal.dataAtividade,
         tipo:mylocal.tipo,
         duracao:mylocal.duracao,
         dataAlimento: mylocal.data,
