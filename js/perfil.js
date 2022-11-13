@@ -8,12 +8,13 @@ const generoSelect = document.getElementById('genero')
 
 document.addEventListener("click",(e) =>{
     const el = e.target
-    e.preventDefault()
     const email = emailInput.value;
     const senha = senhaInput.value;
     const nome = nomeInput.value;
     const idade = idadeInput.value;
     const genero = generoSelect.value;
+
+    
 
     if(el.classList.contains("btn-salva")){
         editarUser(nome,idade,genero,email,senha)
@@ -21,11 +22,7 @@ document.addEventListener("click",(e) =>{
     else if(el.classList.contains("btn-excluir-conta")){
         excluirConta()
     }
-
-    
-
-    
-
+    e.target()
 })
 
 function erroInputs(a,y){
