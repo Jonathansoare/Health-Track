@@ -8,6 +8,7 @@ const generoSelect = document.getElementById('genero')
 
 document.addEventListener("click",(e) =>{
     const el = e.target
+    e.preventDefault()
     const email = emailInput.value;
     const senha = senhaInput.value;
     const nome = nomeInput.value;
