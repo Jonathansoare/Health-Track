@@ -98,7 +98,7 @@ function validaGenero(){
 function validaInputEmail(){
     const email = emailInput.value
     function validarEmail(email){
-        var emailPattern =  /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+        var emailPattern =  /^[_A-z0-9-]+(\.[_A-z0-9-]+)*@[A-z0-9-]+(\.[A-z0-9-]+)*(\.[A-z]{2,4})$/;
         var resul  = emailPattern.test(email);
         if (resul === true){
             return true
