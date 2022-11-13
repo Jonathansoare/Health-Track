@@ -117,15 +117,21 @@ function apagar(){
 function porcentagemPressao(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
     const pressaoNovo = pressaoInput.value
-    const pressaoAntiga = mylocal.pressao
+    const pressaoAntiga = 0;
 
-    if(pressaoAntiga === null){
-        pressaoAntiga = 0
+    if(pressaoAntiga !== null){
+        const pressaoAntiga = mylocal.pressao;
+        const porcentagem = pressaoNovo / pressaoAntiga -1
+        const porceFinal = (porcentagem * 100).toFixed(2)
+        return porceFinal
+    }else{
+        const pressaoAntiga = 0
+        const porcentagem = pressaoNovo / pressaoAntiga -1
+        const porceFinal = (porcentagem * 100).toFixed(2)
+        return porceFinal
     }
 
-    const porcentagem = pressaoNovo / pressaoAntiga -1
-    const porceFinal = (porcentagem * 100).toFixed(2)
-    return porceFinal
+    
 
 }
 
