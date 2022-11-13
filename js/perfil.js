@@ -1,21 +1,29 @@
 const emailInput = document.getElementById('input-email');
 const senhaInput = document.getElementById('input-senha');
 const nomeInput = document.getElementById('input-Nome')
-const btn = document.getElementById('btn');
+const btn = document.getElementById('btn-salva');
 const alert = document.getElementById('msg').innerHTML;
 const idadeInput = document.getElementById('input-Idade')
 const generoSelect = document.getElementById('genero')
 
-btn.addEventListener("click",(el) =>{
-    el.preventDefault()
-
+document.addEventListener("click",(e) =>{
+    const el = e.target
     const email = emailInput.value;
     const senha = senhaInput.value;
     const nome = nomeInput.value;
     const idade = idadeInput.value;
     const genero = generoSelect.value;
 
-    editarUser(nome,idade,genero,email,senha)
+    if(el.classList.contains("btn-salva")){
+        editarUser(nome,idade,genero,email,senha)
+    }
+    else if(el.classList.contains("btn-excluir-conta")){
+        excluirConta()
+    }
+
+    
+
+    
 
 })
 
@@ -185,4 +193,11 @@ function mostradados(){
     document.getElementById('input-senha').value = (mylocal).senha
     
 }
+
+function excluirConta(){
+    location.href = '/index.html'
+    localStorage.removeItem('user')
+}
+
+
 mostradados()

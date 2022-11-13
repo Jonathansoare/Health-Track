@@ -47,17 +47,40 @@ div.perfil-form option{
     background-color: #151515;
 }
 
-div.perfil-form button {
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-salva {
     margin-top: 20px;
     background: linear-gradient(135deg, #6e8efb, #a777e3);
     color: #fff;
     border-radius: 10px;
+    border: none;
     width: 100px;
+    height: 30px;
 }
 
-div.perfil-form button:hover {
+.btn-salva:hover{
     color: #4d4d4d;
-    transform: scale(1.10);
+    transform: scale(1.05);
+    transition: .4s;
+}
+
+.btn-excluir-conta{
+    margin-top: 20px;
+    background: red;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    width: 200px;
+    height: 30px;
+}
+
+.btn-excluir-conta:hover{
+    color: black;
+    transform: scale(1.05);
     transition: .4s;
 }
 
@@ -93,24 +116,34 @@ div.perfil-form button:hover {
         margin-top: 1px;
         width: 100%;
     }
-    div.perfil-form button {
+    .btn-salva {
         margin-top: 5px;
         width: 100% ;
     }
-    div.perfil-form button {
+    .btn-salva {
         margin-top: 20px;
         width: 80px;
         background: linear-gradient(135deg, #6e8efb, #a777e3);
         color: #fff;
     }
+    .btn-excluir-conta{
+        width: 150px;
+    }
     
 }
 
 @media screen and (max-width:769px){
-    div.perfil-form button {
+    .btn-salva {
         margin-top: 20px;
         width: 100%;
         background: linear-gradient(135deg, #6e8efb, #a777e3);
         color: #fff;
+    }
+    .btn-excluir-conta{
+        margin-top: 10px;
+        width: 100%;
+    }
+    .buttons{
+        flex-direction: column;
     }
 }
