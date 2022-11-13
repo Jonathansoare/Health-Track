@@ -73,12 +73,13 @@ function AmostraFormVizul(){
 
 function mostraMsg(a,y){
     document.getElementById('alert-msg').innerHTML = a
-    document.getElementById('alert-msg').classList.remove('msg-erro'|| 'msg')
+    document.getElementById('alert-msg').classList.remove('msg-erro')
+    document.getElementById('alert-msg').classList.remove('msg')
     document.getElementById('alert-msg').classList.add(y)
-    document.getElementById('alert-msg').style.transition = '0.2s'
     setTimeout(() => {
         document.getElementById('alert-msg').innerHTML = ""
-        document.getElementById('alert-msg').classList.remove('msg-erro' && 'msg')
+        document.getElementById('alert-msg').classList.remove('msg-erro')
+        document.getElementById('alert-msg').classList.remove('msg')
         document.getElementById('alert-msg').style.transition = '0.2s'
     }, 5000);
 }
@@ -159,6 +160,7 @@ function cadastraAtividade(tipo,duracao){
     localStorage.setItem('user',user)
     mostraMsg("Atividade cadastrada com sucesso!",'msg')
     setTimeout(() => {
+        document.getElementById('dynamic-content-cadastro').style.display = "none"
         AmostraFormVizul()
-    }, 3000);
+    }, 1000);
 }

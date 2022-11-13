@@ -28,8 +28,8 @@ function erroInputs(a,y){
 function mostraMsg(a,y){
     document.getElementById('alert-msg').innerHTML = a
     document.getElementById('alert-msg').classList.remove('msg-erro')
+    document.getElementById('alert-msg').classList.remove('msg')
     document.getElementById('alert-msg').classList.add(y)
-    document.getElementById('alert-msg').style.transition = '0.5s'
 }
 
 function validaInputNome(){
@@ -179,21 +179,26 @@ function cadastrauser(nome,idade,genero,email,senha){
     })
 
     if(localStorage.getItem('user') === null){
-        console.log("user nao existe");
         localStorage.setItem('user',user)
-        mostraMsg("",'msg')
         mostraMsg("Usuario cadastrado com sucesso!",'msg')
+        setTimeout(() => {
+            mostraMsg(" ",'msg')
+        }, 5000);
     }
     else{
         if((mylocal).email === email){
             mostraMsg("Usuario ja cadastrado",'msg-erro')
+            setTimeout(() => {
+                mostraMsg(" ",'msg')
+            }, 5000);
         }else{
             localStorage.setItem("user",user)  
-            mostraMsg("",'msg')
             mostraMsg("Usuario cadastrado com sucesso!",'msg')
+            setTimeout(() => {
+                mostraMsg(" ",'msg')
+            }, 5000);
         }
         }
-
 }
 
 

@@ -77,8 +77,8 @@ function erroInputs(a,y){
 function mostraMsg(a,y){
     document.getElementById('alert-msg').innerHTML = a
     document.getElementById('alert-msg').classList.remove('msg-erro')
+    document.getElementById('alert-msg').classList.remove('msg')
     document.getElementById('alert-msg').classList.add(y)
-    document.getElementById('alert-msg').style.transition = '0.5s'
 }
 
 function validarUser(){
@@ -92,6 +92,11 @@ function validarUser(){
             return true
         }
         else{
-            mostraMsg("Usuario ou senha incorreta","msg-erro")}
+            mostraMsg("Usuario ou senha incorreta","msg-erro")
+            setTimeout(() => {
+                mostraMsg(" ",'msg')
+            }, 5000);
+        }
+
     }
 }

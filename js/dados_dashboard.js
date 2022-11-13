@@ -24,8 +24,8 @@ function boxPeso(){
     const pesoNovo = mylocal.peso;
     const porceFinal = mylocal.porcentagem_peso
 
-    if(mylocal.porcentagem_peso === null){
-        valuePeso.innerHTML = "00%"
+    if(mylocal.peso === null){
+        valuePeso.innerHTML = "00"
     }
     else{
         valuePeso.innerHTML = pesoNovo + "Kg"

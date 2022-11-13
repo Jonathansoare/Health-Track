@@ -83,7 +83,6 @@ function mostraMsg(a,y){
     document.getElementById('alert-msg').classList.remove('msg-erro')
     document.getElementById('alert-msg').classList.remove('msg')
     document.getElementById('alert-msg').classList.add(y)
-    document.getElementById('alert-msg').style.transition = '0.2s'
     setTimeout(() => {
         document.getElementById('alert-msg').innerHTML = ""
         document.getElementById('alert-msg').classList.remove('msg-erro' && 'msg')
@@ -145,7 +144,7 @@ function apagar(){
 function calcularIMC(y,x) {
     const mylocal = JSON.parse(localStorage.getItem('user'));
     const imc = y / (x * x)
-    const imcResul = Number(imc.toFixed(2))
+    const imcResul = imc.toFixed(2)
    
     return imcResul
 }
@@ -174,26 +173,21 @@ function porcentagemImc(peso,altura){
         const porceFinal = (porcentagem * 100).toFixed(2)
         return porceFinal
     }
-    
-
 }
 
 function porcentagemPeso(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
-    const peso = pesoInput.value
-    let pesoAntigo;
-    const pesoNovo = peso
+    const pesoAntigo = mylocal.peso
+    const pesoNovo = pesoInput.value
 
-    if(mylocal.peso === null){
-        pesoAntigo = 0
+    if(pesoAntigo === null){
+        return 0
     }
     else{
-        pesoAntigo = mylocal.peso
+        const porcentagem = pesoNovo / pesoAntigo -1
+        const porceFinal = (porcentagem * 100).toFixed(2)
+        return porceFinal
     }
-
-    const porcentagem = pesoNovo / pesoAntigo -1
-    const porceFinal = (porcentagem * 100).toFixed(2)
-    return porceFinal
 }
 
 function cadastraPeso(peso,altura){

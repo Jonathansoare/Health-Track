@@ -39,7 +39,7 @@ function listaTabela(){
     }
     else{
         document.getElementById('alimentos-vizul').innerHTML = ( mylocal).ultimo_alimento;
-        document.getElementById('calorias-vizul').innerHTML =  (mylocal).calorias;
+        document.getElementById('calorias-vizul').innerHTML =  (mylocal).calorias + "kcal";
         document.getElementById('date-vizul').innerHTML =  (mylocal).dataAlimento;
     }
 }
@@ -71,12 +71,13 @@ function AmostraFormVizul(){
 }}}
 function mostraMsg(a,y){
     document.getElementById('alert-msg').innerHTML = a
-    document.getElementById('alert-msg').classList.remove('msg-erro'|| 'msg')
+    document.getElementById('alert-msg').classList.remove('msg-erro')
+    document.getElementById('alert-msg').classList.remove('msg')
     document.getElementById('alert-msg').classList.add(y)
-    document.getElementById('alert-msg').style.transition = '0.2s'
     setTimeout(() => {
         document.getElementById('alert-msg').innerHTML = ""
-        document.getElementById('alert-msg').classList.remove('msg-erro' && 'msg')
+        document.getElementById('alert-msg').classList.remove('msg-erro')
+        document.getElementById('alert-msg').classList.remove('msg')
         document.getElementById('alert-msg').style.transition = '0.2s'
     }, 5000);
 }
@@ -154,8 +155,9 @@ function cadastraAlimento(alimento,calorias){
         indese:mylocal.indese
     })
     localStorage.setItem('user',user)
-    mostraMsg("Pressao cadastrada com sucesso!",'msg')
+    mostraMsg("Alimento cadastrado com sucesso!",'msg')
     setTimeout(() => {
+        document.getElementById('dynamic-content-cadastro').style.display = "none"
         AmostraFormVizul()
-    }, 3000);
+    }, 1000);
 }

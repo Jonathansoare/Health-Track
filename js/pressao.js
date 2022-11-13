@@ -15,6 +15,8 @@ btn.addEventListener("click", (el) => {
         cadastraPressao(pressao)
     }
 })
+
+
 function listaTabela(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
     const pressaoMylocal = (mylocal).pressao;
@@ -30,8 +32,7 @@ function listaTabela(){
         document.getElementById('pressao-vizul').innerHTML = (mylocal).pressao + "MMC";
         document.getElementById('date-vizul').innerHTML = (mylocal).dataPressao;
     }
-    }
-
+}
 function AmostraformCadastro(){
     if(document.getElementById('dynamic-content-vizul').style.display == "block"){
         document.getElementById('dynamic-content-vizul').style.display = "none"
@@ -45,7 +46,6 @@ function AmostraformCadastro(){
         }
     }
 }
-
 function AmostraFormVizul(){
     if(document.getElementById('dynamic-content-cadastro').style.display == "block"){
         document.getElementById('dynamic-content-cadastro').style.display = "none"
@@ -57,16 +57,16 @@ function AmostraFormVizul(){
         else{
             document.getElementById('dynamic-content-vizul').style.display = "block"
             listaTabela()
-        }}}
+}}}
 function mostraMsg(a,y){
     document.getElementById('alert-msg').innerHTML = a
     document.getElementById('alert-msg').classList.remove('msg-erro')
     document.getElementById('alert-msg').classList.remove('msg')
     document.getElementById('alert-msg').classList.add(y)
-    document.getElementById('alert-msg').style.transition = ' all 0.2s'
     setTimeout(() => {
         document.getElementById('alert-msg').innerHTML = ""
-        document.getElementById('alert-msg').classList.remove('msg-erro' && 'msg')
+        document.getElementById('alert-msg').classList.remove('msg-erro')
+        document.getElementById('alert-msg').classList.remove('msg')
         document.getElementById('alert-msg').style.transition = '0.2s'
     }, 5000);
 }
@@ -117,22 +117,16 @@ function apagar(){
 function porcentagemPressao(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
     const pressaoNovo = pressaoInput.value
-    const pressaoAntiga = 0;
+    const pressaoAntiga = mylocal.pressao;
 
-    if(pressaoAntiga !== null){
-        const pressaoAntiga = mylocal.pressao;
-        const porcentagem = pressaoNovo / pressaoAntiga -1
-        const porceFinal = (porcentagem * 100).toFixed(2)
-        return porceFinal
+    if(pressaoAntiga === null){
+        return 00
     }else{
-        const pressaoAntiga = 0
         const porcentagem = pressaoNovo / pressaoAntiga -1
         const porceFinal = (porcentagem * 100).toFixed(2)
+        console.log(porcentagem);
         return porceFinal
     }
-
-    
-
 }
 
 function cadastraPressao(pressao){
