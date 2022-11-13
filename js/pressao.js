@@ -18,7 +18,7 @@ btn.addEventListener("click", (el) => {
 function listaTabela(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
     const pressaoMylocal = (mylocal).pressao;
-    const dataMylocal = (mylocal).data
+    const dataMylocal = (mylocal).dataPressao
 
     if(pressaoMylocal === null){
         document.getElementById('pressao-vizul').innerHTML = "Sem pressão"

@@ -31,7 +31,7 @@ function listaTabela(){
     if(alimentoMylocal === ""){
         document.getElementById('alimentos-vizul').innerHTML = "Sem alimentos"
     }
-    if(caloriasMylocal === ''){
+    if(caloriasMylocal === null){
         document.getElementById('calorias-vizul').innerHTML = "Sem calorias"
     }
     if(dataMylocal === null){
