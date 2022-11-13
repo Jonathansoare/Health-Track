@@ -27,7 +27,7 @@ function listaTabela(){
         document.getElementById('date-vizul').innerHTML = "Sem data"
     }
     else{
-        document.getElementById('pressao-vizul').innerHTML = (mylocal).pressao;
+        document.getElementById('pressao-vizul').innerHTML = (mylocal).pressao + "MMC";
         document.getElementById('date-vizul').innerHTML = (mylocal).dataPressao;
     }
     }
@@ -60,9 +60,10 @@ function AmostraFormVizul(){
         }}}
 function mostraMsg(a,y){
     document.getElementById('alert-msg').innerHTML = a
-    document.getElementById('alert-msg').classList.remove('msg-erro'|| 'msg')
+    document.getElementById('alert-msg').classList.remove('msg-erro')
+    document.getElementById('alert-msg').classList.remove('msg')
     document.getElementById('alert-msg').classList.add(y)
-    document.getElementById('alert-msg').style.transition = '0.2s'
+    document.getElementById('alert-msg').style.transition = ' all 0.2s'
     setTimeout(() => {
         document.getElementById('alert-msg').innerHTML = ""
         document.getElementById('alert-msg').classList.remove('msg-erro' && 'msg')
@@ -146,10 +147,10 @@ function cadastraPressao(pressao){
         dataPeso:mylocal.dataPeso,
         dataPressao:dia+'/'+diaMes+'/'+ano,
         pressao:pressao,
-        dataAtividade:mylocal.data,
+        dataAtividade:mylocal.dataAtividade,
         tipo:mylocal.tipo,
         duracao:mylocal.duracao,
-        dataAlimento: mylocal.data,
+        dataAlimento: mylocal.dataAlimento,
         ultimo_alimento: mylocal.ultimo_alimento,
         calorias: mylocal.calorias,
         porcentagem_peso:mylocal.porcentagem_peso,
@@ -161,6 +162,7 @@ function cadastraPressao(pressao){
     localStorage.setItem('user',user)
     mostraMsg("Pressao cadastrada com sucesso!",'msg')
     setTimeout(() => {
+        document.getElementById('dynamic-content-cadastro').style.display = "none"
         AmostraFormVizul()
-    }, 3000);
+    }, 1000);
 }

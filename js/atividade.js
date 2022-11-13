@@ -147,7 +147,7 @@ function cadastraAtividade(tipo,duracao){
         dataAtividade:dia+'/'+diaMes+'/'+ano,
         tipo:tipo,
         duracao:duracao,
-        dataAlimento: mylocal.data,
+        dataAlimento: mylocal.dataAlimento,
         ultimo_alimento: mylocal.ultimo_alimento,
         calorias: mylocal.calorias,
         porcentagem_peso:mylocal.porcentagem_peso,

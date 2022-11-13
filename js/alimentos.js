@@ -141,7 +141,7 @@ function cadastraAlimento(alimento,calorias){
         dataPeso:mylocal.dataPeso,
         dataPressao:mylocal.dataPressao,
         pressao:mylocal.pressao,
-        dataAtividade:mylocal.data,
+        dataAtividade:mylocal.dataAtividade,
         tipo:mylocal.tipo,
         duracao:mylocal.duracao,
         dataAlimento:dia+'/'+diaMes+'/'+ano ,

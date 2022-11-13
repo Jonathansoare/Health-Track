@@ -30,9 +30,9 @@ btn.addEventListener("click", (el) => {
 function listaTabela(){
     // [0]-dadosPessoais [1]-dadosPeso [2]-pressao [3]-atividade [4]-alimentos [5]-dashboard
     const mylocal = JSON.parse(localStorage.getItem('user'))
-    const pesoMylocal = (mylocal).peso;
-    const alturaMylocal = (mylocal).altura;
-    const dataMylocal = (mylocal).data
+    const pesoMylocal = mylocal.peso
+    const alturaMylocal = mylocal.altura;
+    const dataMylocal = mylocal.dataPeso
     
     if(pesoMylocal === null){
         document.getElementById('peso-vizul').innerHTML = "Sem peso"
@@ -80,7 +80,8 @@ function AmostraFormVizul(){
 
 function mostraMsg(a,y){
     document.getElementById('alert-msg').innerHTML = a
-    document.getElementById('alert-msg').classList.remove('msg-erro'|| 'msg')
+    document.getElementById('alert-msg').classList.remove('msg-erro')
+    document.getElementById('alert-msg').classList.remove('msg')
     document.getElementById('alert-msg').classList.add(y)
     document.getElementById('alert-msg').style.transition = '0.2s'
     setTimeout(() => {
@@ -97,19 +98,48 @@ function erroInputs(a,y){
 function editar(){
     AmostraformCadastro()
     document.getElementById('dynamic-content-cadastro').style.display = "block"
-    btn.addEventListener("click", (el) => {
-        el.preventDefault()
-
+    document.getElementById('dynamic-content-vizul').style.display = "none"
+    btn.addEventListener("click", () => {
         setTimeout(() => {
             document.getElementById('dynamic-content-cadastro').style.display = "none"
-            document.getElementById('dynamic-content-vizul').style.display = "block"
-        }, 1000);
-        
+            AmostraFormVizul()
+        }, 1000);        
     })
-
 }
 
 function apagar(){  
+    const mylocal = JSON.parse(localStorage.getItem('user'))
+
+    document.getElementById('dynamic-content-vizul').style.display = "none"
+
+    const user = JSON.stringify({
+        nome:mylocal.nome,
+        idade:mylocal.idade,
+        genero:mylocal.genero,
+        email:mylocal.email,
+        senha:mylocal.senha,
+        peso:null,
+        altura:null,
+        dataPeso:null,
+        dataPressao:mylocal.dataPressao,
+        pressao:mylocal.pressao,
+        dataAtividade:mylocal.dataAtividade,
+        tipo:mylocal.tipo,
+        duracao:mylocal.duracao,
+        dataAlimento: mylocal.data,
+        ultimo_alimento: mylocal.ultimo_alimento,
+        calorias: mylocal.calorias,
+        porcentagem_peso:mylocal.porcentagemPeso,
+        porcentagem_pressao: mylocal.porcentagem_pressao,
+        imc: mylocal.imc,
+        porcentagem_imc:mylocal.porcentagem_imc,
+        indese:mylocal.indese,
+    });
+    localStorage.setItem('user',user)
+
+    setTimeout(() => {
+        AmostraFormVizul()
+    }, 1000);
 }
 
 function calcularIMC(y,x) {
@@ -139,7 +169,6 @@ function porcentagemImc(peso,altura){
         return 0
     }
     else if (imcAntigo > 0){
-        console.log(imcAntigo);
         const imcNovo = calcularIMC(peso,altura);
         const porcentagem = imcNovo / imcAntigo - 1
         const porceFinal = (porcentagem * 100).toFixed(2)
@@ -152,12 +181,14 @@ function porcentagemImc(peso,altura){
 function porcentagemPeso(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
     const peso = pesoInput.value
-
-    const pesoAntigo = mylocal.peso
+    let pesoAntigo;
     const pesoNovo = peso
 
-    if(pesoAntigo === null){
+    if(mylocal.peso === null){
         pesoAntigo = 0
+    }
+    else{
+        pesoAntigo = mylocal.peso
     }
 
     const porcentagem = pesoNovo / pesoAntigo -1
@@ -198,6 +229,7 @@ function cadastraPeso(peso,altura){
     localStorage.setItem('user',user)
     mostraMsg("Peso cadastrado com sucesso!",'msg')
     setTimeout(() => {
+        document.getElementById('dynamic-content-cadastro').style.display = "none"
         AmostraFormVizul()
-    }, 3000);
-    }
+    }, 1000);
+}
