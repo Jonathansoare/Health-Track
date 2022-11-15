@@ -100,11 +100,23 @@
                             <td style="color: #f8f8f8;" id="atividade-vizul"></td>
                             <td style="color: #f8f8f8;" id="minutos-vizul"></td>
                             <td><i class="fas fa-retweet" onclick="editar()"></i></td>
-                            <td><i class="fas fa-trash" onclick="apagar()"></i></td>
+                            <td><i class="fas fa-trash" onclick="AmostraPopUp()"></i></td>
                           </tr>
                         
                         </tbody>
                     </table>
+                </div>
+            </div>
+            <div class="popup-wrapper">
+                <div class="popup">
+                  <div class="popup-close">X</div>
+                  <div class="popup-content">
+                      <h2>Deseja realmente apagar?</h2>
+                      <div class="popup-buttons">
+                        <button id="btn-popup-sim" class="btnPopupSim">Sim</button>
+                        <button id="btn-popup-nao" class="btnPopupNao">Nao</button>
+                      </div>
+                  </div>
                 </div>
             </div>
         </main>

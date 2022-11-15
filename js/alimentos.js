@@ -103,25 +103,30 @@ function apagar(){
 
     document.getElementById('dynamic-content-vizul').style.display = "none"
 
-    const user_dados = JSON.stringify({
-        email:Object.entries(mylocal)[0][1],
-        senha:Object.entries(mylocal)[1][1],
-        nome:Object.entries(mylocal)[2][1],
-        idade:Object.entries(mylocal)[3][1],
-        genero:Object.entries(mylocal)[4][1],
-        peso: Object.entries(mylocal)[5][1],
-        altura: Object.entries(mylocal)[6][1],
-        data: Object.entries(mylocal)[7][1],
-        pressao:Object.entries(mylocal)[8][1],
-        data_pressao:Object.entries(mylocal)[9][1],
-        atividade:Object.entries(mylocal)[10][1],
-        time_atividade:Object.entries(mylocal)[11][1],
-        data_atividade:Object.entries(mylocal)[12][1],
-        data_alimento:"Sem Data",
-        alimentos:"Sem alimento",
-        calorias:"Sem calorias",
+    const user = JSON.stringify({
+        nome:mylocal.nome,
+        idade:mylocal.idade,
+        genero:mylocal.genero,
+        email:mylocal.email,
+        senha:mylocal.senha,
+        peso:mylocal.peso,
+        altura:mylocal.altura,
+        dataPeso:mylocal.dataPeso,
+        dataPressao:mylocal.dataPressao,
+        pressao:mylocal.pressao,
+        dataAtividade:mylocal.dataAtividade,
+        tipo:mylocal.tipo,
+        duracao:mylocal.duracao,
+        dataAlimento:null ,
+        ultimo_alimento:'',
+        calorias:null,
+        porcentagem_peso:mylocal.porcentagem_peso,
+        porcentagem_pressao:mylocal.porcentagem_pressao,
+        imc: mylocal.imc,
+        porcentagem_imc:mylocal.porcentagem_imc,
+        indese:mylocal.indese
     })
-    localStorage.setItem('user',user_dados)
+    localStorage.setItem('user',user)
 }
 
 function cadastraAlimento(alimento,calorias){
@@ -160,4 +165,28 @@ function cadastraAlimento(alimento,calorias){
         document.getElementById('dynamic-content-cadastro').style.display = "none"
         AmostraFormVizul()
     }, 1000);
+}
+
+function AmostraPopUp(){
+    const popUp = document.querySelector('.popup-wrapper')
+
+    popUp.style.display = 'flex'
+
+    document.addEventListener("click", (e) =>{
+        const el = e.target
+
+        if(el.classList.contains('popup-close')){
+            popUp.style.display = 'none'
+        }
+        if(el.classList.contains('popup-wrapper')){
+            popUp.style.display = 'none'
+        }
+        if(el.classList.contains('btnPopupNao')){
+            popUp.style.display = 'none'
+        }
+        if(el.classList.contains('btnPopupSim')){
+            popUp.style.display = 'none'
+            apagar()
+        }
+    })
 }

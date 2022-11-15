@@ -20,7 +20,7 @@ btnSalva.addEventListener("click",(el) =>{
 
 btnExcluir.addEventListener('click', (el) =>{
     el.preventDefault()
-    excluirConta()
+    AmostraPopUp()
 })
 
 
@@ -197,5 +197,27 @@ function excluirConta(){
     localStorage.removeItem('user')
 }
 
+function AmostraPopUp(){
+    const popUp = document.querySelector('.popup-wrapper')
 
+    popUp.style.display = 'flex'
+
+    document.addEventListener("click", (e) =>{
+        const el = e.target
+
+        if(el.classList.contains('popup-close')){
+            popUp.style.display = 'none'
+        }
+        if(el.classList.contains('popup-wrapper')){
+            popUp.style.display = 'none'
+        }
+        if(el.classList.contains('btnPopupNao')){
+            popUp.style.display = 'none'
+        }
+        if(el.classList.contains('btnPopupSim')){
+            popUp.style.display = 'none'
+            excluirConta()
+        }
+    })
+}
 mostradados()

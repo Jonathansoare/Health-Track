@@ -130,15 +130,11 @@ function apagar(){
         calorias: mylocal.calorias,
         porcentagem_peso:mylocal.porcentagemPeso,
         porcentagem_pressao: mylocal.porcentagem_pressao,
-        imc: mylocal.imc,
-        porcentagem_imc:mylocal.porcentagem_imc,
-        indese:mylocal.indese,
+        imc:null,
+        porcentagem_imc:null,
+        indese:'',
     });
     localStorage.setItem('user',user)
-
-    setTimeout(() => {
-        AmostraFormVizul()
-    }, 1000);
 }
 
 function calcularIMC(y,x) {
@@ -226,4 +222,28 @@ function cadastraPeso(peso,altura){
         document.getElementById('dynamic-content-cadastro').style.display = "none"
         AmostraFormVizul()
     }, 1000);
+}
+
+function AmostraPopUp(){
+    const popUp = document.querySelector('.popup-wrapper')
+
+    popUp.style.display = 'flex'
+
+    document.addEventListener("click", (e) =>{
+        const el = e.target
+
+        if(el.classList.contains('popup-close')){
+            popUp.style.display = 'none'
+        }
+        if(el.classList.contains('popup-wrapper')){
+            popUp.style.display = 'none'
+        }
+        if(el.classList.contains('btnPopupNao')){
+            popUp.style.display = 'none'
+        }
+        if(el.classList.contains('btnPopupSim')){
+            popUp.style.display = 'none'
+            apagar()
+        }
+    })
 }
