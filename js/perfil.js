@@ -3,7 +3,7 @@ const senhaInput = document.getElementById('input-senha');
 const nomeInput = document.getElementById('input-Nome')
 const btnSalva = document.getElementById('btn-salva');
 const btnExcluir = document.getElementById('btn-excluir-conta')
-const alert = document.getElementById('msg').innerHTML;
+const alert = document.getElementById('alert-msg').innerHTML;
 const idadeInput = document.getElementById('input-Idade')
 const generoSelect = document.getElementById('genero')
 
@@ -31,10 +31,10 @@ function erroInputs(a,y){
 }
 
 function mostraMsg(a,y){
-    document.getElementById('msg').innerHTML = a
-    document.getElementById('msg').classList.remove('msg-erro'||'msg')
-    document.getElementById('msg').classList.add(y)
-    document.getElementById('msg').style.transition = '0.5s'
+    document.getElementById('alert-msg').innerHTML = a
+    document.getElementById('alert-msg').classList.remove('msg-erro')
+    document.getElementById('alert-msg').classList.remove('msg')
+    document.getElementById('alert-msg').classList.add(y)
 }
 
 function validaInputNome(){
@@ -71,12 +71,12 @@ function validaInputIdade(){
     const idade = idadeInput.value
     
     if(idade === ""){
-        mostraMsg("Idade inválida")
+        mostraMsg("Idade inválida",'msg-erro')
         erroInputs(idadeInput,"input-register-erro")
         return false
     }
     if(idade < 18){
-        mostraMsg("So pode cria conta acima de 18 Anos")
+        mostraMsg("So pode cria conta acima de 18 Anos",'msg-erro')
         erroInputs(idadeInput,"input-register-erro")
         return false
     }
@@ -176,7 +176,7 @@ function editarUser(nome,idade,genero,email,senha){
     })
 
     localStorage.setItem("user",user)  
-    mostraMsg("Usuario editado com sucesso!",'msg')
+    mostraMsg("Usuario editado com sucesso",'msg')
     setTimeout(() => {
         mostraMsg("",'msg')
     }, 5000);
