@@ -66,6 +66,7 @@
     }
     .imgIcon{
         display: flex;
+        padding: 10px;
     }
     #iconMenu{
         display: block;
