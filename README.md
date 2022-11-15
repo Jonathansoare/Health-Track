@@ -5,8 +5,6 @@ https://shimmering-palmier-e9d502.netlify.app/index.html<br>
 
 Health track e um aplicação front-end construida com base no tutotial do canal do [Erick vieira](https://www.youtube.com/channel/UCQ7hS-gde6sRkOGSBg3xXog)
 
-Esse projeto v
-
 Com esse projeto você consegue adicionar :<br>
 * Peso e altura
 * Sua pressão arterial
