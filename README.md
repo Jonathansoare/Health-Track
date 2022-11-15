@@ -28,10 +28,8 @@ Esse projeto contem contem:
 <h2> 🛠 Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
-- [Javascript](http://www.javascript.org.in/)
-<br>
-- [html](https://html5.org/)
-<br>
+- [Javascript](http://www.javascript.org.in/)<br>
+- [html](https://html5.org/)<br>
 - [css](https://www.css.org/)
 
 ---
