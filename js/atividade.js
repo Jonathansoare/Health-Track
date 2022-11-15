@@ -163,7 +163,7 @@ function cadastraAtividade(tipo,duracao){
         indese:mylocal.indese
     })
     localStorage.setItem('user',user)
-    mostraMsg("Atividade cadastrada com sucesso!",'msg')
+    mostraMsg("Atividade cadastrada com sucesso",'msg')
     setTimeout(() => {
         document.getElementById('dynamic-content-cadastro').style.display = "none"
         AmostraFormVizul()

@@ -160,7 +160,7 @@ function cadastraAlimento(alimento,calorias){
         indese:mylocal.indese
     })
     localStorage.setItem('user',user)
-    mostraMsg("Alimento cadastrado com sucesso!",'msg')
+    mostraMsg("Alimento cadastrado com sucesso",'msg')
     setTimeout(() => {
         document.getElementById('dynamic-content-cadastro').style.display = "none"
         AmostraFormVizul()

@@ -165,7 +165,7 @@ function cadastraPressao(pressao){
         indese:mylocal.indese,
     })
     localStorage.setItem('user',user)
-    mostraMsg("Pressao cadastrada com sucesso!",'msg')
+    mostraMsg("Pressao cadastrada com sucesso",'msg')
     setTimeout(() => {
         document.getElementById('dynamic-content-cadastro').style.display = "none"
         AmostraFormVizul()

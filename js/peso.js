@@ -217,7 +217,7 @@ function cadastraPeso(peso,altura){
         indese:indeseImc(calcularIMC(peso,altura))
     })
     localStorage.setItem('user',user)
-    mostraMsg("Peso cadastrado com sucesso!",'msg')
+    mostraMsg("Peso cadastrado com sucesso",'msg')
     setTimeout(() => {
         document.getElementById('dynamic-content-cadastro').style.display = "none"
         AmostraFormVizul()

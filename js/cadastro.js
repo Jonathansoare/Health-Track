@@ -193,7 +193,7 @@ function cadastrauser(nome,idade,genero,email,senha){
             }, 5000);
         }else{
             localStorage.setItem("user",user)  
-            mostraMsg("Usuario cadastrado com sucesso!",'msg')
+            mostraMsg("Usuario cadastrado com sucesso",'msg')
             setTimeout(() => {
                 mostraMsg(" ",'msg')
             }, 5000);
