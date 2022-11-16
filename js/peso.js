@@ -9,6 +9,8 @@ const pesoVizul = document.getElementById('peso-vizul').innerHTML
 const alturaVizul = document.getElementById('altura-vizul').innerHTML
 //const btn_abri_tela_vizul = document.getElementById('button-abrir-vizul')
 
+const mylocal = JSON.parse(localStorage.getItem('user'))
+
 btn.addEventListener("click", (el) => {
     el.preventDefault()
     const peso = pesoInput.value
@@ -76,7 +78,7 @@ function AmostraFormVizul(){
         else{
             document.getElementById('dynamic-content-vizul').style.display = "block"
             listaTabela()
-        }}}
+}}}
 
 function mostraMsg(a,y){
     document.getElementById('alert-msg').innerHTML = a
@@ -147,7 +149,6 @@ function calcularIMC(y,x) {
 
 function indeseImc(imc){
     const nivel = ['Abaixo do Peso','peso normal','sobrepeso','Obesidade grau 1','Obesidade grau 2','Obesidade grau 3']
-
     if(imc >= 39.9) return nivel[5];
     if(imc >= 34.9) return nivel[4];
     if(imc >= 29.9) return nivel[3];
@@ -247,3 +248,4 @@ function AmostraPopUp(){
         }
     })
 }
+
