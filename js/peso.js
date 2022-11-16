@@ -207,7 +207,7 @@ function cadastraPeso(peso,altura){
         dataAtividade:mylocal.dataAtividade,
         tipo:mylocal.tipo,
         duracao:mylocal.duracao,
-        dataAlimento: mylocal.data,
+        dataAlimento: mylocal.dataAlimento,
         ultimo_alimento: mylocal.ultimo_alimento,
         calorias: mylocal.calorias,
         porcentagem_peso: porcentagemPeso(),
