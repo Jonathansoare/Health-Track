@@ -93,7 +93,7 @@ function boxImc(){
     const valueImc = document.getElementById('value-imc-ds')
     const valuePorceImc = document.getElementById('value-porce-imc')
     const porceFinal = mylocal.porcentagem_imc
-    const imc = mylocal.imc
+    const imc = (mylocal).imc
 
    if(imc === null){
     valueImc.innerHTML = '00'
@@ -123,7 +123,7 @@ function boxAtividade(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
     const atividadeMylocal = mylocal.tipo
     const atividade = document.getElementById('atividade-ds')
-    const dataMylocal = mylocal.dataAtividade
+    const dataMylocal = mylocal.dataAtividade[dia,mes,ano]
     const data = document.getElementById('date-atividade-ds')
 
     if(atividadeMylocal === ""){

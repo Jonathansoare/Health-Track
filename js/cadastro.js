@@ -25,11 +25,11 @@ function erroInputs(a,y){
     a.classList.add(y)
 }
 
-function mostraMsg(a,y){
-    document.getElementById('alert-msg').innerHTML = a
+function mostraMsg(msg,campo){
+    document.getElementById('alert-msg').innerHTML = msg
     document.getElementById('alert-msg').classList.remove('msg-erro')
     document.getElementById('alert-msg').classList.remove('msg')
-    document.getElementById('alert-msg').classList.add(y)
+    document.getElementById('alert-msg').classList.add(campo)
 }
 
 function validaInputNome(){
@@ -187,7 +187,7 @@ function cadastrauser(nome,idade,genero,email,senha){
     }
     else{
         if((mylocal).email === email){
-            mostraMsg("Usuario ja cadastrado",'msg-erro')
+            mostraMsg("Email já cadastrado",'msg-erro')
             setTimeout(() => {
                 mostraMsg(" ",'msg')
             }, 5000);

@@ -150,7 +150,7 @@ function cadastraAlimento(alimento,calorias){
         dataAtividade:mylocal.dataAtividade,
         tipo:mylocal.tipo,
         duracao:mylocal.duracao,
-        dataAlimento:dia+'/'+diaMes+'/'+ano ,
+        dataAlimento:data.toLocaleTimeString() + ' |' + ' ' + dia+'/'+diaMes+'/'+ano,
         ultimo_alimento:alimento,
         calorias:calorias,
         porcentagem_peso:mylocal.porcentagem_peso,

@@ -150,7 +150,7 @@ function cadastraPressao(pressao){
         peso:mylocal.peso,
         altura:mylocal.altura,
         dataPeso:mylocal.dataPeso,
-        dataPressao:dia+'/'+diaMes+'/'+ano,
+        dataPressao:data.toLocaleTimeString() + ' |' + ' ' + dia+'/'+diaMes+'/'+ano,
         pressao:pressao,
         dataAtividade:mylocal.dataAtividade,
         tipo:mylocal.tipo,

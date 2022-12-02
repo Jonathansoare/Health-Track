@@ -150,7 +150,7 @@ function cadastraAtividade(tipo,duracao){
         dataPeso:mylocal.dataPeso,
         dataPressao:mylocal.dataPressao,
         pressao:mylocal.pressao,
-        dataAtividade:dia+'/'+diaMes+'/'+ano,
+        dataAtividade:data.toLocaleTimeString() + ' |' + ' ' + dia+'/'+diaMes+'/'+ano,
         tipo:tipo,
         duracao:duracao,
         dataAlimento: mylocal.dataAlimento,

@@ -193,6 +193,7 @@ function cadastraPeso(peso,altura){
     let dia = data.getDate()
     let ano = data.getFullYear()
     let diaMes = data.getMonth()
+    console.log(data.toLocaleTimeString());
     // [0]-dadosPessoais [1]-dadosPeso [2]-pressao [3]-atividade [4]-alimentos [5]-dashboard
     const user = JSON.stringify({
         nome:mylocal.nome,
@@ -202,7 +203,7 @@ function cadastraPeso(peso,altura){
         senha:mylocal.senha,
         peso:peso,
         altura:altura,
-        dataPeso:dia+'/'+diaMes+'/'+ano,
+        dataPeso:data.toLocaleTimeString() + ' |' + ' ' + dia+'/'+diaMes+'/'+ano,
         dataPressao:mylocal.dataPressao,
         pressao:mylocal.pressao,
         dataAtividade:mylocal.dataAtividade,
