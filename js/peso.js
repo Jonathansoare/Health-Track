@@ -193,7 +193,6 @@ function cadastraPeso(peso,altura){
     let dia = data.getDate()
     let ano = data.getFullYear()
     let diaMes = data.getMonth()
-    console.log(data.toLocaleTimeString());
     // [0]-dadosPessoais [1]-dadosPeso [2]-pressao [3]-atividade [4]-alimentos [5]-dashboard
     const user = JSON.stringify({
         nome:mylocal.nome,
