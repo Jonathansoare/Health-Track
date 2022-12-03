@@ -167,21 +167,21 @@ div.perfil-form option{
     transform: scale(1.05);
 }
 
-.custom-checkbox {
+.custom-checkbox-perfil {
     margin-top: 10px;
     padding-left: 2px;
 
 }
 
-.custom-checkbox input {
+.custom-checkbox-perfil input {
     display: none;
 }
 
-.custom-checkbox label {
+.custom-checkbox-perfil label {
     color: #fff;
 }
 
-.custom-checkbox input + label:before {
+.custom-checkbox-perfil input + label:before {
     content: '';
     width: 18px;
     height: 18px;
@@ -194,7 +194,7 @@ div.perfil-form option{
     margin-bottom: 3px;
 }
   
-.custom-checkbox input:checked + label:before {
+.custom-checkbox-perfil input:checked + label:before {
 background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 10 10'%3E%3Cg class='nc-icon-wrapper' stroke-width='1' fill='%23555555'%3E%3Cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' data-cap='butt' d='M2.83 4.72l1.58 1.58 2.83-2.83'/%3E%3C/g%3E%3C/svg%3E");
 background-color:#a777e3;
 background-position: center;
