@@ -1,4 +1,4 @@
-const inputEmail = document.getElementById('input-email');
+const inputEmail = document.getElementById('email-input');
 const inputSenha = document.getElementById('input-senha');
 const btn = document.querySelector('.btn-login');
 const alert = document.getElementById('alert-msg');
@@ -8,8 +8,8 @@ const senha = inputSenha.value;
 
 
 document.addEventListener("click", (e) => {
-    e.preventDefault()
     const el = e.target;
+
     if(el.classList.contains('btn-login')){
         validarLogin()
     }
@@ -38,12 +38,7 @@ function validaEmail(){
         }
     }
 
-    if(email === ""){
-        erroInputs(inputEmail,"input-register-erro")
-        mostraMsg("Email inválido",'msg-erro')
-        return false
-    }
-    if(validarEmail(email) !== true){
+    if(email === "" || validarEmail(email) !== true){
         erroInputs(inputEmail,"input-register-erro")
         mostraMsg("Por favor, forneça um endereço de email válido.",'msg-erro')
         return false
@@ -101,12 +96,3 @@ function validarUser(){
     }
 }
 
-function mostraSenha(){
-    var temp = inputSenha;
-    if (temp.type === "password") {
-        temp.type = "text";
-    }
-    else {
-        temp.type = "password";
-    }
-}
