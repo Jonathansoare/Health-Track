@@ -100,3 +100,14 @@ function validarUser(){
 
     }
 }
+
+function mostraSenha(){
+    console.log('ola');
+    var temp = inputSenha;
+    if (temp.type === "password") {
+        temp.type = "text";
+    }
+    else {
+        temp.type = "password";
+    }
+}
