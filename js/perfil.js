@@ -138,13 +138,13 @@ function validaInputSenha(){
         return false
     }
     if(senha.length < 8){
-        mostraMsg("Presisa der 8 caracteres")
+        mostraMsg("Presisa der 8 caracteres",'msg-erro')
         erroInputs(senhaInput,"input-register-erro")
         return false
     }
     else{
         mostraMsg("")
-        erroInputs(senhaInput,"input-register")
+        erroInputs(senhaInput,"input-register-erro")
         return true
     }
 }
