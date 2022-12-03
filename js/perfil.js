@@ -220,4 +220,14 @@ function AmostraPopUp(){
         }
     })
 }
+
+function mostraSenha(){
+    var temp = senhaInput;
+    if (temp.type === "password") {
+        temp.type = "text";
+    }
+    else {
+        temp.type = "password";
+    }
+}
 mostradados()

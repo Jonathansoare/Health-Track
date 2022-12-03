@@ -3,6 +3,7 @@ const nomeInput = document.getElementById('input-nome');
 const senhaInput = document.getElementById('input-senha');
 const idadeInput = document.getElementById('idade')
 const generoSelect = document.getElementById('genero')
+const checkbox = document.getElementById('checkbox-1')
 
 
 document.addEventListener("click", (e) =>{
@@ -13,12 +14,10 @@ document.addEventListener("click", (e) =>{
     const genero = generoSelect.value;
     const email = emailInput.value;
     const senha = senhaInput.value;
-
     if(el.classList.contains('btn')){
         validaForm(nome,idade,genero,email,senha)
-    }
-})
-
+    }    
+});
 
 function erroInputs(a,y){
     a.classList.remove("input-register-erro" || "input-register")
@@ -201,6 +200,15 @@ function cadastrauser(nome,idade,genero,email,senha){
         }
 }
 
+function mostraSenha(){
+    var temp = senhaInput;
+    if (temp.type === "password") {
+        temp.type = "text";
+    }
+    else {
+        temp.type = "password";
+    }
+}
 
 /*
 function cadastraUser(nome,idade,genero,nome,senha){
