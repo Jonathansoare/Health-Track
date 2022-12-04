@@ -355,6 +355,8 @@ div.type {
 
 .logout-txt{
     cursor: pointer;
+    text-decoration: none;
+    color: #999999;
 }
 
 .popup-wrapper{
