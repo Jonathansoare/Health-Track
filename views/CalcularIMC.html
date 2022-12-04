@@ -51,7 +51,7 @@
                     </li>
                     <li class="sidebar_logout">
                         <i  class="fa-solid fa-arrow-right-from-bracket "></i>
-                        <a class="logout-txt" id="logout-button" href="../index.html ">Logout</a>
+                        <a class="logout-txt" id="logout-button" onclick="AmostraPopUp()">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -71,6 +71,18 @@
                         <div class="imc-value" id="span-imc"></div>
                         <div class="imc-indese" id="indese-imc"></div>
                     </div>
+                </div>
+            </div>
+            <div class="popup-wrapper-logount">
+                <div class="popup">
+                  <div class="popup-close">X</div>
+                  <div class="popup-content">
+                      <h2>Deseja realmente sair da conta?</h2>
+                      <div class="popup-buttons">
+                        <button id="btn-popup-sim" class="btnPopupSim">Sim</button>
+                        <button id="btn-popup-nao" class="btnPopupNao">Nao</button>
+                      </div>
+                  </div>
                 </div>
             </div>
         </main>

@@ -95,6 +95,7 @@ div.menu ul li area:hover {
 .hide{
  left: -300px;
 }
+
 @media screen and (max-width:768px){
     sidebar {
     position: absolute;

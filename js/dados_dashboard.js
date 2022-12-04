@@ -135,3 +135,28 @@ function boxAtividade(){
         data.innerHTML = dataMylocal
     }
 }
+
+function AmostraPopUp(){
+    const popUp = document.querySelector('.popup-wrapper')
+    popUp.style.display = 'flex'
+    let sidebar = document.getElementById('sidebar');
+    sidebar.style.left = '-300px';
+
+    document.addEventListener("click", (e) =>{
+        const el = e.target
+
+        if(el.classList.contains('popup-close')){
+            popUp.style.display = 'none'
+        }
+        if(el.classList.contains('popup-wrapper')){
+            popUp.style.display = 'none'
+        }
+        if(el.classList.contains('btnPopupNao')){
+            popUp.style.display = 'none'
+        }
+        if(el.classList.contains('btnPopupSim')){
+            popUp.style.display = 'none'
+            location.href="../index.html" 
+        }
+    })
+}

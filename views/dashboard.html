@@ -51,7 +51,7 @@
                     </li>
                     <li class="sidebar_logout">
                         <i  class="fa-solid fa-arrow-right-from-bracket "></i>
-                        <a class="logout-txt" id="logout-button" href="../index.html ">Logout</a>
+                        <a class="logout-txt" id="logout-button" onclick="AmostraPopUp()">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -63,7 +63,7 @@
                     <h2>Health Track</h2>
                 </div>
                 <i id="iconMenu" onclick="responsiveSiderbar()" class="fas fa-bars "></i>
-                <a id="Logout_header" href="../index.html "> <i class="fa-solid fa-arrow-right-from-bracket "></i> logout</a>
+                <a class="logount" id="Logout_header" onclick="AmostraPopUp()"><i class="fa-solid fa-arrow-right-from-bracket "></i> logout</a>
             </header>
             <div class="main-content ">
                 <div class="main-content-title">
@@ -123,17 +123,27 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-    </div>
+            <div class="popup-wrapper">
+                <div class="popup">
+                  <div class="popup-close">X</div>
+                  <div class="popup-content">
+                      <h2>Deseja realmente sair da conta?</h2>
+                      <div class="popup-buttons">
+                        <button id="btn-popup-sim" class="btnPopupSim">Sim</button>
+                        <button id="btn-popup-nao" class="btnPopupNao">Nao</button>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
     </main>
     </div>
     <script src="../plugins/bootstrap-5.1.3-dist/js/bootstrap.min.js "></script>
     <script src="../plugins/fontawesome-free-6.1.1-web/js/all.min.js "></script>
     <script defer src="/js/menu.js"></script>
     <script src="/js/dados_dashboard.js"></script>
-    <script src="/js/dashboard.js"></script>
 </body>
 
 </html>
