@@ -48,7 +48,7 @@ function listaTabela(){
     else{
         document.getElementById('peso-vizul').innerHTML = (mylocal).peso;
         document.getElementById('altura-vizul').innerHTML = (mylocal).altura;
-        document.getElementById('date-vizul').innerHTML = (mylocal).dataPeso;
+        document.getElementById('date-vizul').innerHTML = (mylocal).dataPeso + ' | ' + ( mylocal).horaPeso;
     }
 }
 
@@ -202,8 +202,10 @@ function cadastraPeso(peso,altura){
         senha:mylocal.senha,
         peso:peso,
         altura:altura,
-        dataPeso:data.toLocaleTimeString() + ' |' + ' ' + dia+'/'+diaMes+'/'+ano,
+        dataPeso:dia+'/'+diaMes+'/'+ano,
+        horaPeso: data.toLocaleTimeString(),
         dataPressao:mylocal.dataPressao,
+        horaPressao:mylocal.horaPressao,
         pressao:mylocal.pressao,
         dataAtividade:mylocal.dataAtividade,
         tipo:mylocal.tipo,

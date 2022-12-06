@@ -40,7 +40,7 @@ function listaTabela(){
     else{
         document.getElementById('alimentos-vizul').innerHTML = ( mylocal).ultimo_alimento;
         document.getElementById('calorias-vizul').innerHTML =  (mylocal).calorias + "kcal";
-        document.getElementById('date-vizul').innerHTML =  (mylocal).dataAlimento;
+        document.getElementById('date-vizul').innerHTML =  (mylocal).dataAlimento + ' | ' + (mylocal).horaAlimento;
     }
 }
 function AmostraformCadastro(){
@@ -145,12 +145,16 @@ function cadastraAlimento(alimento,calorias){
         peso:mylocal.peso,
         altura:mylocal.altura,
         dataPeso:mylocal.dataPeso,
+        horaPeso:mylocal.horaPeso,
         dataPressao:mylocal.dataPressao,
+        horaPressao:mylocal.horaPressao,
         pressao:mylocal.pressao,
         dataAtividade:mylocal.dataAtividade,
+        horaAtividade:mylocal.horaAtividade,
         tipo:mylocal.tipo,
         duracao:mylocal.duracao,
-        dataAlimento:data.toLocaleTimeString() + ' |' + ' ' + dia+'/'+diaMes+'/'+ano,
+        dataAlimento: dia+'/'+diaMes+'/'+ano,
+        horaAlimento:data.toLocaleTimeString(),
         ultimo_alimento:alimento,
         calorias:calorias,
         porcentagem_peso:mylocal.porcentagem_peso,
