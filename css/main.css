@@ -14,7 +14,7 @@ main .main-content {
 }
 
 main .main-content {
-    padding: 10px;
+    padding: 20px;
     width: 100%;
     height: calc(100% - 90px);
     overflow-y: auto;
@@ -132,9 +132,8 @@ main .main-content {
 .dynamic-content {
     width: 100%;
     position: relative;
-    padding: 25px;
+    padding: 15px;
     background-color: #121212;
-    color: #f8f8f8;
     display: none;
     border-radius: 20px;
 }
@@ -147,20 +146,19 @@ main .main-content {
     flex-direction: column;
 }
 
-.dynamic-content tbody {
-    color: #f8f8f8;
-}
 .form-input{
     display: flex;
     flex-direction: column;
 }
 
-tbody, td, tfoot, th, thead, tr{
-    color: #f8f8f8;
+tbody, td, tfoot,thead, tr{
+    padding: 0;
+    color: #f8f8f8; 
 }
-.dynamic-content td {
 
-    color: #f8f8f8;
+.dados-tabela td{
+    padding: 0px;
+    color: white;
 }
 
 div.main-content-title {
@@ -209,9 +207,6 @@ div.imc-indese {
     text-transform: uppercase;
 }
 
-.dashboard-content {
-
-}
 
 .dashboard-flex-parent {
     display: flex;
@@ -393,9 +388,9 @@ div.type {
     font-family:  Roboto, sans-serif;
     text-align: center;
     width: 100%;
-    max-width: 350px;
+    max-width: 450px;
     margin: 10% auto;
-    padding: 20px;
+    padding: 25px;
     background: #121212;
     position: relative;
     border-radius: 15px;
@@ -503,6 +498,39 @@ div.type {
     }
 }
 
+@media screen and (max-width:885px) {
+    table th{
+        font-size: 16px;
+        font-weight: 400;
+    }
+    table td{
+        font-size: 12px;
+        font-weight: 300;
+    }
+}
+
+@media screen and (max-width:835px) {
+    table th{
+        font-size: 14px;
+        font-weight: 400;
+    }
+    table td{
+        font-size: 10px;
+        font-weight: 300;
+    }
+}
+
+@media screen and (max-width:785px) {
+    table th{
+        font-size: 12px;
+        font-weight: 400;
+    }
+    table td{
+        font-size: 8px;
+        font-weight: 300;
+    }
+}
+
 @media screen and (max-width:768px) {
     main {
         display: block;
@@ -521,7 +549,6 @@ div.type {
         color: #f8f8f8;
         display: none;
         border-radius: 20px;
-        margin-top: 10px;
     }
     div.main main-content{
         padding: 5px;
