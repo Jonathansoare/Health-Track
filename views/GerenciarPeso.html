@@ -100,22 +100,23 @@
               <button id="btn_cadastra-peso" type="submit" class="btn">Cadastrar</button>
             </form>
         </div>
+        <!-- TELA DA TABELA-->
         <div class="dynamic-content" id="dynamic-content-vizul">
           <div class="form_vizul">
               <table class="table table-resposivo" id="tabela">
                   <thead>
                       <tr id="linha de titulo">
-                          <th scope="col">Data</th>
-                          <th scope="col">Peso</th>
-                          <th scope="col">Altura</th>
-                          <th scope="col">Editar</th>
-                          <th scope="col">Deletar</th>
+                          <th class="tabela-title" scope="col">Data</th>
+                          <th class="tabela-title" scope="col">Peso</th>
+                          <th class="tabela-title" scope="col">Altura</th>
+                          <th class="tabela-title" scope="col">Editar</th>
+                          <th class="tabela-title" scope="col">Deletar</th>
                       </tr>
                   </thead>
                   <tbody id="tbody">
-                    <th style="color: #f8f8f8;" scope="row" id="date-vizul"></th>
-                    <td style="color: #f8f8f8;" id="peso-vizul"></td>
-                    <td style="color: #f8f8f8;" id="altura-vizul"></td>
+                    <td class="dados-tabela"  id="date-vizul"></td>
+                    <td class="dados-tabela"  id="peso-vizul"></td>
+                    <td class="dados-tabela" id="altura-vizul"></td>
                     <td><i id="reset" onclick="editar()" class="fas fa-retweet"></i></td>
                     <td><i id="trash" onclick="AmostraPopUpConta()" class="fas fa-trash"></i></td>
                   </tbody>

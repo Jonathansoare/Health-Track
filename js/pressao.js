@@ -30,7 +30,7 @@ function listaTabela(){
     }
     else{
         document.getElementById('pressao-vizul').innerHTML = (mylocal).pressao + "MMC";
-        document.getElementById('date-vizul').innerHTML = (mylocal).dataPressao;
+        document.getElementById('date-vizul').innerHTML = (mylocal).dataPressao + ' | ' + (mylocal).horaPressao;
     }
 }
 function AmostraformCadastro(){
@@ -150,7 +150,9 @@ function cadastraPressao(pressao){
         peso:mylocal.peso,
         altura:mylocal.altura,
         dataPeso:mylocal.dataPeso,
-        dataPressao:data.toLocaleTimeString() + ' |' + ' ' + dia+'/'+diaMes+'/'+ano,
+        horaPeso:mylocal.horaPeso,
+        dataPressao: dia+'/'+diaMes+'/'+ano,
+        horaPressao: data.toLocaleTimeString(),
         pressao:pressao,
         dataAtividade:mylocal.dataAtividade,
         tipo:mylocal.tipo,
