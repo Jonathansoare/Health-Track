@@ -90,25 +90,20 @@
                     </form>
                 </div>
                 <div class="dynamic-content" id="dynamic-content-vizul">
-                    <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th scope="col">Data</th>
-                            <th scope="col">Ultima Alimentação</th>
-                            <th scope="col">calorias</th>
-                            <th scope="col" onclick="editar()">Editar</th>
-                            <th scope="col" onclick="AmostraPopUp()">Deletar</th>
-                          </tr>
+                    <table class="table table-resposivo" id="tabela">
+                        <thead class="tabela-title">
+                            <th class="tabela-title" scope="col">Data</th>
+                            <th class="tabela-title" scope="col">Ultima Alimentação</th>
+                            <th class="tabela-title" scope="col">calorias</th>
+                            <th class="tabela-title" scope="col" onclick="editar()">Editar</th>
+                            <th class="tabela-title" scope="col" onclick="AmostraPopUp()">Deletar</th>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th style="color: #f8f8f8;" class="label_th" scope="row" id="date-vizul"></th>
-                            <td style="color: #f8f8f8;" class="label_td" id="alimentos-vizul"></td>
-                            <td style="color: #f8f8f8;" id="calorias-vizul"></td>
+                            <td class="dados-tabela" id="date-vizul"></td>
+                            <td class="dados-tabela" id="alimentos-vizul"></td>
+                            <td sclass="dados-tabela" id="calorias-vizul"></td>
                             <td><i class="fas fa-retweet" onclick="editar()"></i></td>
                             <td><i class="fas fa-trash" onclick=" AmostraPopUp()"></i></td>
-                          </tr>
-                        
                         </tbody>
                     </table>
                 </div>

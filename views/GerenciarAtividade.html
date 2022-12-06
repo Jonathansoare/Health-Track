@@ -88,21 +88,19 @@
                     </form>
                 </div>
                 <div class="dynamic-content" id="dynamic-content-vizul">
-                    <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th scope="col">Data</th>
-                            <th scope="col">Tipo de atividade</th>
-                            <th scope="col">Duracao</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Deletar</th>
+                    <table class="table table-resposivo" id="tabela">
+                        <thead class="tabela-title">
+                            <th class="tabela-title" scope="col">Data</th>
+                            <th class="tabela-title" scope="col">Tipo de atividade</th>
+                            <th class="tabela-title" scope="col">Duracao</th>
+                            <th class="tabela-title" scope="col">Editar</th>
+                            <th class="tabela-title" scope="col">Deletar</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th style="color: #f8f8f8;" scope="row" id="date-vizul"></th>
-                            <td style="color: #f8f8f8;" id="atividade-vizul"></td>
-                            <td style="color: #f8f8f8;" id="minutos-vizul"></td>
+                            <td class="dados-tabela" id="date-vizul"></td>
+                            <td class="dados-tabela" id="atividade-vizul"></td>
+                            <td class="dados-tabela" id="minutos-vizul"></td>
                             <td><i class="fas fa-retweet" onclick="editar()"></i></td>
                             <td><i class="fas fa-trash" onclick="AmostraPopUp()"></i></td>
                           </tr>

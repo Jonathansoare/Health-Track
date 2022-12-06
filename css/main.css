@@ -155,8 +155,20 @@ tbody, td, tfoot,thead, tr{
     padding: 0;
     color: #f8f8f8; 
 }
+.tabela{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
 
-.dados-tabela td{
+.tabela th{
+    padding: 10px;
+    width: 100%;
+    
+}
+
+.dados-tabela td,th{
     padding: 0px;
     color: white;
 }
@@ -511,7 +523,7 @@ div.type {
 
 @media screen and (max-width:835px) {
     table th{
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 400;
     }
     table td{
