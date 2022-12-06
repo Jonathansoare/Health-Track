@@ -84,22 +84,18 @@
                     </form>
                 </div>
                 <div class="dynamic-content" id="dynamic-content-vizul">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">Data</th>
-                                <th scope="col">Pressao Arterial</th>
-                                <th scope="col">Editar</th>
-                                <th scope="col">Deletar</th>
-                            </tr>
+                    <table class="table table-resposivo" id="tabela">
+                        <thead class="tabela-title">
+                                <th class="tabela-title" scope="col">Data</th>
+                                <th class="tabela-title" scope="col">Pressao Arterial</th>
+                                <th class="tabela-title" scope="col">Editar</th>
+                                <th class="tabela-title" scope="col">Deletar</th>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th style="color: #f8f8f8;" scope="row" id="date-vizul"></th>
-                                <td style="color: #f8f8f8;" id="pressao-vizul"></td>
-                                <td><i class="fas fa-retweet" onclick="editar()"></i></td>
-                                <td><i class="fas fa-trash" onclick="AmostraPopUp()"></i></td>
-                            </tr>
+                        <tbody id="tbody">
+                            <td class="dados-tabela" id="date-vizul"></td>
+                            <td class="dados-tabela" id="pressao-vizul"></td>
+                            <td><i class="fas fa-retweet" onclick="editar()"></i></td>
+                            <td><i class="fas fa-trash" onclick="AmostraPopUp()"></i></td>
                         </tbody>
                     </table>
                 </div>
