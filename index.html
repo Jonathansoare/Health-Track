@@ -16,6 +16,10 @@
     <div class="login">
         <div class="login-form">
             <div class="login-form-wrapper">
+                <div class="img-mobile">
+                    <img src="./images/Heart.png " alt="coração">
+                    <h2>Health Track</h2>
+                </div>
                 <div class="login-title">
                     <h2>Log In</h2>
                     <a href="views/register.html" class="page-cadastro">Increva-se</a>
@@ -35,7 +39,7 @@
                 <label for="checkbox-1">Mostrar senha</label>
               </div>
             <div id="alert-msg" class="alert-msg"></div>
-            <button class="btn-login">Login</button>
+            <button class="btn-login" alt="botão de login">Login</button>
             </div>
         </div>
         <div class="banner-login ">
@@ -45,8 +49,8 @@
     </div>
     <script src="../plugins/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
     <script src="/plugins/fontawesome-free-6.1.1-web/js/all.min.js"></script>
-    <script src="/js/login.js"></script>
-    <script>
+    <script defer src="/js/login.js"></script>
+    <script defer>
     function mostraSenha(){
         var temp = document.getElementById('input-senha');
         if (temp.type === "password") {
