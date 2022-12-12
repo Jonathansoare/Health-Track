@@ -122,12 +122,16 @@ function apagar(){
         peso:null,
         altura:null,
         dataPeso:null,
+        horaPeso:null,
+        horaPressao:mylocal.horaPressao,
         dataPressao:mylocal.dataPressao,
         pressao:mylocal.pressao,
         dataAtividade:mylocal.dataAtividade,
+        horaAtividade:mylocal.horaAtividade,
         tipo:mylocal.tipo,
         duracao:mylocal.duracao,
         dataAlimento: mylocal.data,
+        horaAlimento:mylocal.horaAlimento,
         ultimo_alimento: mylocal.ultimo_alimento,
         calorias: mylocal.calorias,
         porcentagem_peso:mylocal.porcentagemPeso,
@@ -246,7 +250,7 @@ function AmostraPopUpConta(){
         }
         if(el.classList.contains('btnPopupSim')){
             popUp.style.display = 'none'
-            excluirConta()
+            apagar()
         }
     })
 }

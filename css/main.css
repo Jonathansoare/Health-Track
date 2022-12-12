@@ -345,10 +345,12 @@ div.type {
 }
 
 .msg{
+    margin-top: 5px;
     color: green;
-   font-family:roboto,sans-serif;
+    font-family:roboto,sans-serif;
 }
 .msg-alert{
+    margin-top: 5px;
     color: red;
     font-family: roboto,sans-serif;
 }

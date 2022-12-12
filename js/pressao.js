@@ -102,15 +102,19 @@ function apagar(){
         peso:mylocal.peso,
         altura:mylocal.altura,
         dataPeso:mylocal.dataPeso,
+        horaPeso:mylocal.horaPeso,
         dataPressao:null,
+        horaPressao:null,
         pressao:null,
         dataAtividade:mylocal.dataAtividade,
+        horaAtividade:mylocal.horaAtividade,
         tipo:mylocal.tipo,
         duracao:mylocal.duracao,
-        dataAlimento: mylocal.dataAlimento,
+        dataAlimento: mylocal.data,
+        horaAlimento:mylocal.horaAlimento,
         ultimo_alimento: mylocal.ultimo_alimento,
         calorias: mylocal.calorias,
-        porcentagem_peso:mylocal.porcentagem_peso,
+        porcentagem_peso:mylocal.porcentagemPeso,
         porcentagem_pressao:null,
         imc: mylocal.imc,
         porcentagem_imc:mylocal.porcentagem_imc,
@@ -193,7 +197,7 @@ function AmostraPopUpConta(){
         }
         if(el.classList.contains('btnPopupSim')){
             popUp.style.display = 'none'
-            excluirConta()
+            apagar()
         }
     })
 }
