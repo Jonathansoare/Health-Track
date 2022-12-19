@@ -38,6 +38,8 @@ function listaTabela(){
     }
     else{
         document.getElementById('atividade-vizul').innerHTML = (mylocal).tipo;
+        document.getElementById('minutos-vizul').innerHTML = (mylocal).duracao;
+        document.getElementById('date-vizul').innerHTML = (mylocal).dataAtividade;
         document.getElementById('minutos-vizul').innerHTML =  (mylocal).duracao;
         document.getElementById('date-vizul').innerHTML = (mylocal).dataAtividade + ' | ' + (mylocal).horaAtividade;
     }
