@@ -52,12 +52,12 @@ function validaInputNome(){
     }
     if(nome === ""){
         erroInputs(nomeInput,"input-register-erro")
-        mostraMsg("Nome inválido")
+        mostraMsg("Nome inválido",'msg-erro')
         return false
     }
     if(validarNome(nome) !== true){
         erroInputs(nomeInput,"input-register-erro")
-        mostraMsg("Digite seu nome completo")
+        mostraMsg("Digite seu nome completo",'msg-erro')
         return false
     }
     else{
@@ -120,7 +120,7 @@ function validaInputEmail(){
     }
     if(validarEmail(email) !== true){
         erroInputs(emailInput,"input-register-erro")
-        mostraMsg("Por favor, forneça um endereço de email válido.")
+        mostraMsg("Por favor, forneça um endereço de email válido.",'msg-erro')
         return false
     }
     else{

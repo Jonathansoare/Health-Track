@@ -87,9 +87,11 @@ div.perfil-form option{
 
 .msg{
     color:green;
+    bottom: 0px;
 }
 .msg-erro{
     color: red;
+    bottom: 0px;
 }
 
 .popup-wrapper{
@@ -302,5 +304,13 @@ padding: 1px;
         align-items: center;
         justify-content: center;
         transition: all ease 0.2s;
+    }
+}
+
+@media screen and (max-width:500px){
+
+    div.perfil{
+        height: 100%;
+        margin-top: 1px;
     }
 }
