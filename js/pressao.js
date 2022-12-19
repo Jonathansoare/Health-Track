@@ -30,7 +30,7 @@ function listaTabela(){
     }
     else{
         document.getElementById('pressao-vizul').innerHTML = (mylocal).pressao + "MMC";
-        document.getElementById('date-vizul').innerHTML = (mylocal).dataPressao;
+        document.getElementById('date-vizul').innerHTML = (mylocal).dataPressao + ' | ' + (mylocal).horaPressao;
     }
 }
 function AmostraformCadastro(){
@@ -102,15 +102,19 @@ function apagar(){
         peso:mylocal.peso,
         altura:mylocal.altura,
         dataPeso:mylocal.dataPeso,
+        horaPeso:mylocal.horaPeso,
         dataPressao:null,
+        horaPressao:null,
         pressao:null,
         dataAtividade:mylocal.dataAtividade,
+        horaAtividade:mylocal.horaAtividade,
         tipo:mylocal.tipo,
         duracao:mylocal.duracao,
-        dataAlimento: mylocal.dataAlimento,
+        dataAlimento: mylocal.data,
+        horaAlimento:mylocal.horaAlimento,
         ultimo_alimento: mylocal.ultimo_alimento,
         calorias: mylocal.calorias,
-        porcentagem_peso:mylocal.porcentagem_peso,
+        porcentagem_peso:mylocal.porcentagemPeso,
         porcentagem_pressao:null,
         imc: mylocal.imc,
         porcentagem_imc:mylocal.porcentagem_imc,
@@ -150,7 +154,9 @@ function cadastraPressao(pressao){
         peso:mylocal.peso,
         altura:mylocal.altura,
         dataPeso:mylocal.dataPeso,
-        dataPressao:data.toLocaleTimeString() + ' |' + ' ' + dia+'/'+diaMes+'/'+ano,
+        horaPeso:mylocal.horaPeso,
+        dataPressao: dia+'/'+diaMes+'/'+ano,
+        horaPressao: data.toLocaleTimeString(),
         pressao:pressao,
         dataAtividade:mylocal.dataAtividade,
         tipo:mylocal.tipo,
@@ -191,7 +197,7 @@ function AmostraPopUpConta(){
         }
         if(el.classList.contains('btnPopupSim')){
             popUp.style.display = 'none'
-            excluirConta()
+            apagar()
         }
     })
 }

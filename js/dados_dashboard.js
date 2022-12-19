@@ -123,7 +123,7 @@ function boxAtividade(){
     const mylocal = JSON.parse(localStorage.getItem('user'))
     const atividadeMylocal = mylocal.tipo
     const atividade = document.getElementById('atividade-ds')
-    const dataMylocal = mylocal.dataAtividade[dia,mes,ano]
+    const dataMylocal = mylocal.dataAtividade
     const data = document.getElementById('date-atividade-ds')
 
     if(atividadeMylocal === ""){

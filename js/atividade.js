@@ -40,6 +40,8 @@ function listaTabela(){
         document.getElementById('atividade-vizul').innerHTML = (mylocal).tipo;
         document.getElementById('minutos-vizul').innerHTML = (mylocal).duracao;
         document.getElementById('date-vizul').innerHTML = (mylocal).dataAtividade;
+        document.getElementById('minutos-vizul').innerHTML =  (mylocal).duracao;
+        document.getElementById('date-vizul').innerHTML = (mylocal).dataAtividade + ' | ' + (mylocal).horaAtividade;
     }
     }
 
@@ -115,16 +117,20 @@ function apagar(){
         peso:mylocal.peso,
         altura:mylocal.altura,
         dataPeso:mylocal.dataPeso,
+        horaPeso:mylocal.horaPeso,
         dataPressao:mylocal.dataPressao,
+        horaPressao:mylocal.horaPressao,
         pressao:mylocal.pressao,
         dataAtividade:null,
+        horaAtividade:null,
         tipo:'',
         duracao:null,
-        dataAlimento: mylocal.dataAlimento,
+        dataAlimento: mylocal.data,
+        horaAlimento:mylocal.horaAlimento,
         ultimo_alimento: mylocal.ultimo_alimento,
         calorias: mylocal.calorias,
-        porcentagem_peso:mylocal.porcentagem_peso,
-        porcentagem_pressao:mylocal.porcentagem_pressao,
+        porcentagem_peso:mylocal.porcentagemPeso,
+        porcentagem_pressao: mylocal.porcentagem_pressao,
         imc: mylocal.imc,
         porcentagem_imc:mylocal.porcentagem_imc,
         indese:mylocal.indese
@@ -138,6 +144,7 @@ function cadastraAtividade(tipo,duracao){
     let dia = data.getDate()
     let ano = data.getFullYear()
     let diaMes = data.getMonth()
+    console.log(dia,diaMes,ano);
     // [0]-dadosPessoais [1]-dadosPeso [2]-pressao [3]-atividade [4]-alimentos [5]-dashboard
     const user = JSON.stringify({
         nome:mylocal.nome,
@@ -148,9 +155,12 @@ function cadastraAtividade(tipo,duracao){
         peso:mylocal.peso,
         altura:mylocal.altura,
         dataPeso:mylocal.dataPeso,
+        horaPeso:mylocal.horaPeso,
         dataPressao:mylocal.dataPressao,
+        horaPressao:mylocal.horaPressao,
         pressao:mylocal.pressao,
-        dataAtividade:data.toLocaleTimeString() + ' |' + ' ' + dia+'/'+diaMes+'/'+ano,
+        dataAtividade: dia+'/'+diaMes+'/'+ano,
+        horaAtividade:data.toLocaleTimeString(),
         tipo:tipo,
         duracao:duracao,
         dataAlimento: mylocal.dataAlimento,
@@ -189,7 +199,7 @@ function AmostraPopUpConta(){
         }
         if(el.classList.contains('btnPopupSim')){
             popUp.style.display = 'none'
-            excluirConta()
+            apagar()
         }
     })
 }

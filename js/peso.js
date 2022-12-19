@@ -48,7 +48,7 @@ function listaTabela(){
     else{
         document.getElementById('peso-vizul').innerHTML = (mylocal).peso;
         document.getElementById('altura-vizul').innerHTML = (mylocal).altura;
-        document.getElementById('date-vizul').innerHTML = (mylocal).dataPeso;
+        document.getElementById('date-vizul').innerHTML = (mylocal).dataPeso + ' | ' + ( mylocal).horaPeso;
     }
 }
 
@@ -122,12 +122,16 @@ function apagar(){
         peso:null,
         altura:null,
         dataPeso:null,
+        horaPeso:null,
+        horaPressao:mylocal.horaPressao,
         dataPressao:mylocal.dataPressao,
         pressao:mylocal.pressao,
         dataAtividade:mylocal.dataAtividade,
+        horaAtividade:mylocal.horaAtividade,
         tipo:mylocal.tipo,
         duracao:mylocal.duracao,
         dataAlimento: mylocal.data,
+        horaAlimento:mylocal.horaAlimento,
         ultimo_alimento: mylocal.ultimo_alimento,
         calorias: mylocal.calorias,
         porcentagem_peso:mylocal.porcentagemPeso,
@@ -202,8 +206,10 @@ function cadastraPeso(peso,altura){
         senha:mylocal.senha,
         peso:peso,
         altura:altura,
-        dataPeso:data.toLocaleTimeString() + ' |' + ' ' + dia+'/'+diaMes+'/'+ano,
+        dataPeso:dia+'/'+diaMes+'/'+ano,
+        horaPeso: data.toLocaleTimeString(),
         dataPressao:mylocal.dataPressao,
+        horaPressao:mylocal.horaPressao,
         pressao:mylocal.pressao,
         dataAtividade:mylocal.dataAtividade,
         tipo:mylocal.tipo,
@@ -244,7 +250,7 @@ function AmostraPopUpConta(){
         }
         if(el.classList.contains('btnPopupSim')){
             popUp.style.display = 'none'
-            excluirConta()
+            apagar()
         }
     })
 }

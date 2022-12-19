@@ -145,12 +145,12 @@ function validaInputSenha(){
 
 function validaForm(nome,idade,genero,email,senha){
     if(validaInputNome() === true && validaInputIdade() === true && validaGenero() === true && validaInputEmail() === true && validaInputSenha() === true){
-        cadastrauser(nome,idade,genero,email,senha)
+        cadastraUser(nome,idade,genero,email,senha)
     }
 }
 
 
-function cadastrauser(nome,idade,genero,email,senha){
+function cadastraUser(nome,idade,genero,email,senha){
     const mylocal = JSON.parse(localStorage.getItem('user'))
 
     const user = JSON.stringify({
@@ -162,12 +162,16 @@ function cadastrauser(nome,idade,genero,email,senha){
         peso:null,
         altura:null,
         dataPeso:null,
+        horaPeso:null,
         dataPressao:null,
+        horaPressao:null,
         pressao:null,
         dataAtividade:null,
+        horaAtividade:null,
         tipo:'',
         duracao:null,
         dataAlimento: null,
+        horaAlimento:null,
         ultimo_alimento: '',
         calorias: null,
         porcentagem_peso: null,
